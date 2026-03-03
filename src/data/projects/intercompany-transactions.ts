@@ -13,5 +13,5 @@ export const intercompanyTransactionsProject = {
     "/images/projects/intercompany-transactions/gallery-4.jpg",
     "/images/projects/intercompany-transactions/gallery-5.jpg",
   ],
-  published: true, // Set to true to make this project visible
+  published: false,
 };
