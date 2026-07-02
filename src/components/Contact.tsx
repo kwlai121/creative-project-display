@@ -19,7 +19,7 @@ const Contact = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-medium mb-2">Phone</h3>
-              <a href="tel:+50670137123" className="text-muted-foreground hover:text-foreground transition-colors">(506) 7013-7123</a>
+              <a href="tel:+50670494874" className="text-muted-foreground hover:text-foreground transition-colors">(506) 7049-4874</a>
             </div>
             
             <div className="p-6 rounded-lg border border-border/50 bg-card hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-in-out">
@@ -30,7 +30,7 @@ const Contact = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-medium mb-2">Email</h3>
-              <a href="mailto:jorge@jmurillo.me" className="text-muted-foreground hover:text-foreground transition-colors">jorge@jmurillo.me</a>
+              <a href="mailto:kwlai121@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">kwlai121@gmail.com</a>
             </div>
             
             <div className="p-6 rounded-lg border border-border/50 bg-card hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-in-out">
