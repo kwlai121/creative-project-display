@@ -21,5 +21,5 @@ export const digitalGoodsForGoodProject = {
       "Explore the Digital Goods for Good platform prototype. This interactive demo showcases the user journey from discovering digital goods to completing a purchase that benefits charitable causes.",
     height: "450px",
   },
-  published: true, // Set to true to make this project visible
+  published: false, // Set to true to make this project visible
 };

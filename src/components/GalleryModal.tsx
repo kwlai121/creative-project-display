@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
@@ -19,12 +19,75 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
   initialIndex,
   projectTitle
 }) => {
+  const MIN_SCALE = 1;
+  const MAX_SCALE = 4;
+  const CLICK_ZOOM_SCALE = 2;
+
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const [scale, setScale] = useState(1);
+  const [isDragging, setIsDragging] = useState(false);
+  const [panOffset, setPanOffset] = useState({ x: 0, y: 0 });
+  const dragStateRef = useRef({ startX: 0, startY: 0, originX: 0, originY: 0, moved: false });
 
   // Update currentIndex when initialIndex prop changes
   useEffect(() => {
     setCurrentIndex(initialIndex);
   }, [initialIndex]);
+
+  // Reset zoom/pan whenever the active image changes
+  useEffect(() => {
+    setScale(1);
+    setIsDragging(false);
+    setPanOffset({ x: 0, y: 0 });
+  }, [currentIndex]);
+
+  // Snap the pan back to center once fully zoomed out
+  useEffect(() => {
+    if (scale === 1) setPanOffset({ x: 0, y: 0 });
+  }, [scale]);
+
+  const isZoomed = scale > 1;
+
+  const handleImageWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    const zoomSpeed = 0.0015;
+    setScale((prev) => Math.min(MAX_SCALE, Math.max(MIN_SCALE, prev - e.deltaY * zoomSpeed)));
+  };
+
+  const handleImageMouseDown = (e: React.MouseEvent) => {
+    if (!isZoomed) return;
+    e.preventDefault();
+    dragStateRef.current = {
+      startX: e.clientX,
+      startY: e.clientY,
+      originX: panOffset.x,
+      originY: panOffset.y,
+      moved: false,
+    };
+    setIsDragging(true);
+  };
+
+  const handleImageMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    const dragState = dragStateRef.current;
+    const dx = e.clientX - dragState.startX;
+    const dy = e.clientY - dragState.startY;
+    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) dragState.moved = true;
+    setPanOffset({ x: dragState.originX + dx, y: dragState.originY + dy });
+  };
+
+  const handleImageMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleImageClick = () => {
+    // Skip the zoom toggle if the mouse was dragged rather than clicked
+    if (dragStateRef.current.moved) {
+      dragStateRef.current.moved = false;
+      return;
+    }
+    setScale((prev) => (prev > 1 ? 1 : CLICK_ZOOM_SCALE));
+  };
 
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -90,11 +153,27 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
             )}
 
             {/* Main Image */}
-            <div className="w-full h-full flex items-center justify-center p-8">
+            <div
+              className="w-full h-full flex items-center justify-center p-8 overflow-hidden"
+              onWheel={handleImageWheel}
+              onMouseMove={handleImageMouseMove}
+              onMouseUp={handleImageMouseUp}
+              onMouseLeave={handleImageMouseUp}
+            >
               <img
                 src={images[currentIndex]}
                 alt={`${projectTitle} - Gallery Image ${currentIndex + 1}`}
-                className="h-[calc(100vh-120px)] w-auto max-w-full object-contain"
+                onClick={handleImageClick}
+                onMouseDown={handleImageMouseDown}
+                draggable={false}
+                style={{
+                  transform: `translate(${panOffset.x}px, ${panOffset.y}px) scale(${scale})`,
+                  transition: isDragging ? 'none' : 'transform 0.1s ease-out',
+                }}
+                className={`h-[calc(100vh-120px)] w-auto max-w-full object-contain select-none ${
+                  isZoomed ? (isDragging ? 'cursor-grabbing' : 'cursor-grab') : 'cursor-zoom-in'
+                }`}
+                aria-label={isZoomed ? 'Scroll or drag to pan, click to zoom out' : 'Scroll or click to zoom in'}
               />
             </div>
 

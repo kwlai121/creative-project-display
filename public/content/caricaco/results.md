@@ -1,0 +1,1 @@
+An intuitive, accessible, and responsive landing page that maintains a professional look across devices, successfully driving user enrollment through clear, strategic communication of benefits and criteria.

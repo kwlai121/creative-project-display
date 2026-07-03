@@ -11,7 +11,7 @@ const Contact = () => {
             I'm open to new opportunities and collaborations. Whether you have a project in mind or just want to chat about design, feel free to reach out.
           </p>
           
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <div className="grid md:grid-cols-2 gap-6 mt-12">
             <div className="p-6 rounded-lg border border-border/50 bg-card hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-in-out">
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mb-4 mx-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary" aria-hidden="true">
@@ -31,25 +31,6 @@ const Contact = () => {
               </div>
               <h3 className="text-lg font-medium mb-2">Email</h3>
               <a href="mailto:kwlai121@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">kwlai121@gmail.com</a>
-            </div>
-            
-            <div className="p-6 rounded-lg border border-border/50 bg-card hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-in-out">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mb-4 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary" aria-hidden="true">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" x2="21" y1="14" y2="3" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-medium mb-2">Social</h3>
-              <div className="flex justify-center space-x-4 text-muted-foreground">
-                <a href="https://www.linkedin.com/in/jmurilloux/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-                  LinkedIn<span className="sr-only"> (opens in new tab)</span>
-                </a>
-                <a href="https://www.behance.net/murillojorge" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-                  Behance<span className="sr-only"> (opens in new tab)</span>
-                </a>
-              </div>
             </div>
           </div>
         </div>

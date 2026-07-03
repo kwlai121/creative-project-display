@@ -1,0 +1,1 @@
+The main challenge was to translate a dense academic curriculum, program pillars, and partnership requirements from two distinct organizations into a cohesive, high-converting single-page experience that functions flawlessly across both desktop and mobile layouts.

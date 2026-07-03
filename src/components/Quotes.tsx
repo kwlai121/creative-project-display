@@ -6,13 +6,13 @@ const quotes = [
     text: "He's a natural leader and a strong collaborator who effectively aligned stakeholders and engineering teams on a shared user-centric vision. King's strategic approach and dedication to quality make him a valuable asset to any team.",
     author: "Daniel Delgado",
     role: "Senior Engineering Manager",
-    company: "Intel"
+    company: "WDS"
   },
   {
     text: "King is a great designer who elevated our product's aesthetic and user experience. His deep knowledge of accessibility ensured our designs were inclusive and user-friendly for all. He was also instrumental in improving our design system, which enhanced our team's productivity.",
     author: "Mauricio Varela",
     role: "Product Manager",
-    company: "Intel"
+    company: "Caricaco"
   },
   {
     text: "King is the ultimate team player. Not only is he an impressive UX developer, he is insightful, detail-oriented and challenges others to be the best of themselves.",

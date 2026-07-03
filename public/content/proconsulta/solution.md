@@ -1,0 +1,1 @@
+We developed a clean, highly structured interface leveraging Poppins typography to ensure optimal legibility. A vibrant color palette anchored by bright orange accents was implemented to highlight calls to action (CTAs) and strategic keywords, balanced with solid ink tones for text and foundational layouts.

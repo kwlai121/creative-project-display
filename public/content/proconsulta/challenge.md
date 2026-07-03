@@ -1,0 +1,1 @@
+The main challenge was to structure a visual ecosystem for a traditional construction firm (Proconsulta & Construcción) that successfully blends a modern design language with a formal, trustworthy tone ("usted" treatment) tailored for industrial and corporate clients. The project demanded a highly scalable system operating flawlessly across both desktop and mobile environments.

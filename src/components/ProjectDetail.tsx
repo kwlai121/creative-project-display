@@ -140,7 +140,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Image Gallery */}
-      {project.gallery && project.gallery.length > 1 && (
+      {project.gallery && project.gallery.length > 0 && (
         <section className="section">
           <div className="container-width">
             <div className="max-w-4xl mx-auto">

@@ -1,0 +1,1 @@
+A structured, modular UI using a deep corporate color palette that balances both brands. Information density was managed through custom iconography for key pillars, clean vertical timelines for the academic tracks, and prominent, accessible Call-to-Action (CTA) buttons adapted carefully for smaller touch targets on mobile devices.
