@@ -6,7 +6,8 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="space-y-2 animate-slide-down">
             <h1 className="hero-title mt-4 px-4">
-              Designer / Analyst <br />/ Doer
+              Designer <span className="text-[0.55em] font-normal mx-1 align-middle">/</span> Analyst <br />
+              <span className="text-[0.55em] font-normal mx-1 align-middle">/</span> Doer
             </h1>
           </div>
 
