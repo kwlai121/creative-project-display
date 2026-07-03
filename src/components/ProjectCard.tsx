@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
+import { withBase } from '@/lib/basePath';
 
 interface ProjectCardProps {
   title: string;
@@ -32,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="aspect-[4/3] relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity group-hover:opacity-100"></div>
         <img 
-          src={imageUrl} 
+          src={withBase(imageUrl)}
           alt={title}
           className="object-cover w-full h-full transition-transform duration-700 ease-in-out group-hover:scale-105"
           loading="lazy"

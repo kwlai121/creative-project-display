@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { withBase } from '@/lib/basePath';
 
 const About = () => {
   return (
@@ -9,7 +10,7 @@ const About = () => {
           <div className="order-2 md:order-1">
             <div className="aspect-square max-w-md mx-auto rounded-full overflow-hidden">
               <img 
-                src="/images/klai-me.jpg"
+                src={withBase("/images/klai-me.jpg")}
                 alt="King, happily sitting next to a lake."
                 className="w-full h-full object-cover"
               />

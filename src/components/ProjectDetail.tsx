@@ -11,6 +11,7 @@ import MediaSection from './MediaSection';
 import ReactMarkdown from 'react-markdown';
 import { projects } from '@/data/projects';
 import { loadAllProjectContent } from '@/utils/contentLoader';
+import { withBase } from '@/lib/basePath';
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -116,8 +117,8 @@ const ProjectDetail = () => {
         <div className="container-width">
           <div className="max-w-4xl mx-auto">
             <div className="aspect-[4/3] relative overflow-hidden rounded-2xl mb-8 animate-scale-in">
-              <img 
-                src={project.imageUrl} 
+              <img
+                src={withBase(project.imageUrl)}
                 alt={project.title}
                 className="object-cover w-full h-full"
               />
@@ -152,8 +153,8 @@ const ProjectDetail = () => {
                     onClick={() => openModal(index)}
                     className={`aspect-[4/3] relative overflow-hidden rounded-xl animate-fade-in [animation-delay:${300 + index * 100}ms] group cursor-pointer`}
                   >
-                    <img 
-                      src={image} 
+                    <img
+                      src={withBase(image)}
                       alt={`${project.title} gallery image ${index + 1}`}
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
                     />
@@ -258,7 +259,7 @@ const ProjectDetail = () => {
       {/* Gallery Modal */}
       {project.gallery && (
         <GalleryModal
-          images={project.gallery}
+          images={project.gallery.map(withBase)}
           isOpen={modalOpen}
           onClose={() => setModalOpen(false)}
           initialIndex={selectedImageIndex}
