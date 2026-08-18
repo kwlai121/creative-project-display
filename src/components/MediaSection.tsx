@@ -34,7 +34,6 @@ const MediaSection: React.FC<MediaSectionProps> = ({ video, iframe }) => {
         <video 
           controls 
           className="w-full h-full object-cover rounded-xl"
-          poster={video.title ? undefined : undefined}
         >
           <source src={video.url} type={`video/${video.type || 'mp4'}`} />
           Your browser does not support the video tag.

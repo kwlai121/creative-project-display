@@ -1,6 +1,6 @@
 # My Portfolio
 
-A minimal, AI generated, responsive portfolio website showcasing product design projects and technical expertise.
+A minimal, responsive portfolio website showcasing product design projects and technical expertise.
 
 ## About
 
@@ -12,7 +12,7 @@ This portfolio highlights my work as a Product Designer and technologist, featur
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS
 - **UI Components**: Radix UI primitives with shadcn/ui
-- **Fonts**: Poppins & Inter (Google Fonts)
+- **Fonts**: Poppins & Source Sans Pro (Google Fonts)
 - **Development**: ESLint for code quality
 
 ## Getting Started

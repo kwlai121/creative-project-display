@@ -1,17 +1,21 @@
 import React from 'react';
+import { Linkedin } from 'lucide-react';
 const Contact = () => {
   return <section id="contact" className="section">
       <div className="container-width">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center">
           <span className="inline-block px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full mb-4">
             Contact
           </span>
           <h2 className="mb-4">Let's work together</h2>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-4">
             I'm open to new opportunities and collaborations. Whether you have a project in mind or just want to chat about design, feel free to reach out.
           </p>
+          <p className="text-sm text-muted-foreground mb-8">
+            Costa Rica · Open to remote worldwide
+          </p>
           
-          <div className="grid md:grid-cols-2 gap-6 mt-12">
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
             <div className="p-6 rounded-lg border border-border/50 bg-card hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-in-out">
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mb-4 mx-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary" aria-hidden="true">
@@ -31,6 +35,14 @@ const Contact = () => {
               </div>
               <h3 className="text-lg font-medium mb-2">Email</h3>
               <a href="mailto:kwlai121@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">kwlai121@gmail.com</a>
+            </div>
+
+            <div className="p-6 rounded-lg border border-border/50 bg-card hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-in-out">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mb-4 mx-auto">
+                <Linkedin className="w-6 h-6 text-primary" aria-hidden="true" />
+              </div>
+              <h3 className="text-lg font-medium mb-2">LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/king-lai-3ab14324/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">king-lai-3ab14324</a>
             </div>
           </div>
         </div>

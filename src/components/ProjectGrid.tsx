@@ -6,7 +6,7 @@ import { projects } from '@/data/projects';
 const publishedProjects = projects.filter(project => project.published);
 
 const ProjectGrid = () => {
-  return <section id="projects" className="section py-20">
+  return <section id="projects" className="section">
       <div className="container-width">
         <div className="mb-12 text-center max-w-2xl mx-auto">
           <span className="inline-block px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full mb-4">

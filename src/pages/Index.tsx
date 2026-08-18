@@ -6,10 +6,9 @@ import ProjectGrid from '@/components/ProjectGrid';
 import About from '@/components/About';
 import Quotes from '@/components/Quotes';
 import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
-  const currentYear = new Date().getFullYear();
-  
   return (
     <div className="min-h-screen bg-pattern-grid">
       <Navbar />
@@ -20,11 +19,7 @@ const Index = () => {
         <Quotes />
         <Contact />
       </main>
-      <div className="py-8 text-center">
-        <p className="text-sm text-muted-foreground">
-          © {currentYear} Portfolio. All rights reserved.
-        </p>
-      </div>
+      <Footer />
     </div>
   );
 };

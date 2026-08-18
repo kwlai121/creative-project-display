@@ -1,4 +1,4 @@
-I designed and developed the EOSIO Dashboard, a comprehensive analytics platform that provides real-time insights into the EOSIO blockchain network. The dashboard integrates data from multiple sources including chain APIs, block explorers, and resource pricing oracles to create a unified view of network activity.
+I designed and developed Dr Chen Salud Dental, a comprehensive analytics platform that provides real-time insights into the EOSIO blockchain network. The dashboard integrates data from multiple sources including chain APIs, block explorers, and resource pricing oracles to create a unified view of network activity.
 
 The solution features a modular architecture with specialized components for different aspects of the blockchain:
 

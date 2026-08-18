@@ -4,14 +4,14 @@ export const digitalGoodsForGoodProject = {
   title: "Digital Goods for Good",
   description: "A hackathon winning concept connecting digital creators with charitable causes.",
   category: "Hackathon",
-  imageUrl: "/images/projects/digital-goods-for-good/hero.jpg",
+  imageUrl: "/images/projects/digital-goods-for-good/hero.webp",
   technologies: ["Figma", "React", "Blockchain", "NFTs", "Material UI", "Material Design"],
   gallery: [
-    "/images/projects/digital-goods-for-good/gallery-1.jpg",
-    "/images/projects/digital-goods-for-good/gallery-2.jpg",
-    "/images/projects/digital-goods-for-good/gallery-3.jpg",
-    "/images/projects/digital-goods-for-good/gallery-4.jpg",
-    "/images/projects/digital-goods-for-good/gallery-5.jpg",
+    "/images/projects/digital-goods-for-good/gallery-1.webp",
+    "/images/projects/digital-goods-for-good/gallery-2.webp",
+    "/images/projects/digital-goods-for-good/gallery-3.webp",
+    "/images/projects/digital-goods-for-good/gallery-4.webp",
+    "/images/projects/digital-goods-for-good/gallery-5.webp",
   ],
   // Interactive prototype iframe
   iframe: {

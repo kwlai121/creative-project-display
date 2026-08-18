@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import ThemeToggle from './ThemeToggle';
 
-interface NavbarProps {
-  hideNavLinks?: boolean;
-}
-
-const Navbar = ({ hideNavLinks = false }: NavbarProps) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
@@ -48,32 +44,26 @@ const Navbar = ({ hideNavLinks = false }: NavbarProps) => {
           <a 
             href="#projects" 
             className="nav-link"
-            tabIndex={hideNavLinks ? -1 : undefined}
-            aria-hidden={hideNavLinks || undefined}
           >
             Portfolio
           </a>
           <a 
             href="#about" 
             className="nav-link"
-            tabIndex={hideNavLinks ? -1 : undefined}
-            aria-hidden={hideNavLinks || undefined}
           >
             About
           </a>
           <a 
             href="#contact" 
             className="nav-link"
-            tabIndex={hideNavLinks ? -1 : undefined}
-            aria-hidden={hideNavLinks || undefined}
           >
             Contact
           </a>
-          <ThemeToggle hidden={hideNavLinks} />
+          <ThemeToggle />
         </nav>
         
         <div className="md:hidden flex items-center space-x-2">
-          <ThemeToggle hidden={hideNavLinks} />
+          <ThemeToggle />
           <button 
             className="p-2" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -102,16 +92,12 @@ const Navbar = ({ hideNavLinks = false }: NavbarProps) => {
         <div id="mobile-menu" className="md:hidden absolute top-full left-0 right-0 bg-background border-t shadow-lg animate-fade-in duration-300">
           <nav 
             className="container-width py-4 flex flex-col space-y-4"
-            role="menu"
             aria-label="Mobile navigation"
           >
             <a 
               href="#projects" 
               className="nav-link py-2 px-4 hover:bg-muted rounded-md" 
               onClick={() => setMobileMenuOpen(false)}
-              role="menuitem"
-              tabIndex={hideNavLinks ? -1 : undefined}
-              aria-hidden={hideNavLinks || undefined}
             >
               Portfolio
             </a>
@@ -119,9 +105,6 @@ const Navbar = ({ hideNavLinks = false }: NavbarProps) => {
               href="#about" 
               className="nav-link py-2 px-4 hover:bg-muted rounded-md" 
               onClick={() => setMobileMenuOpen(false)}
-              role="menuitem"
-              tabIndex={hideNavLinks ? -1 : undefined}
-              aria-hidden={hideNavLinks || undefined}
             >
               About
             </a>
@@ -129,9 +112,6 @@ const Navbar = ({ hideNavLinks = false }: NavbarProps) => {
               href="#contact" 
               className="nav-link py-2 px-4 hover:bg-muted rounded-md" 
               onClick={() => setMobileMenuOpen(false)}
-              role="menuitem"
-              tabIndex={hideNavLinks ? -1 : undefined}
-              aria-hidden={hideNavLinks || undefined}
             >
               Contact
             </a>

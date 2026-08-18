@@ -24,7 +24,7 @@ const quotes = [
 
 const Quotes = () => {
   return (
-    <section id="quotes" className="section py-20">
+    <section id="quotes" className="section">
       <div className="container-width">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-medium mb-12 text-center animate-fade-in">

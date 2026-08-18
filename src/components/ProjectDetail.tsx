@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import Navbar from './Navbar';
+import ThemeToggle from './ThemeToggle';
 import Contact from './Contact';
 import { GalleryModal } from './GalleryModal';
 import Results from './Results';
@@ -76,42 +76,50 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen bg-pattern-grid">
-      <Navbar hideNavLinks />
-      <main id="main-content">
-      {/* Navigation Bar */}
-      <nav className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b" aria-label="Project navigation">
-        <div className="container-width py-4">
-          <div className="flex items-center justify-between">
-            <Button variant="ghost" onClick={handleBackToPortfolio} className="gap-2">
-              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-              Back to Portfolio
-            </Button>
-            <div className="flex items-center gap-4">
-              {prevProject && (
-                <Button variant="ghost" size="sm" asChild>
-                  <Link 
-                    to={`/project/${prevProject.slug}`}
-                    aria-label={`Go to previous project: ${prevProject.title}`}
-                  >
-                    <ChevronLeft className="w-4 h-4" aria-hidden="true" />
-                  </Link>
-                </Button>
-              )}
-              {nextProject && (
-                <Button variant="ghost" size="sm" asChild>
-                  <Link 
-                    to={`/project/${nextProject.slug}`}
-                    aria-label={`Go to next project: ${nextProject.title}`}
-                  >
-                    <ChevronRight className="w-4 h-4" aria-hidden="true" />
-                  </Link>
-                </Button>
-              )}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+      >
+        Skip to main content
+      </a>
+
+      {/* Fixed header: brand + back to portfolio + prev/next + theme */}
+      <header className="fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-md shadow-sm">
+        <div className="container-width py-3">
+          <div className="flex items-center justify-between gap-2">
+            <a href="#" className="text-xl font-medium tracking-tight shrink-0">
+              <span className="sr-only">Designer Portfolio</span>
+              <span className="text-primary">K.Lai</span>
+            </a>
+            <div className="flex items-center gap-1 md:gap-4 min-w-0">
+              <Button variant="ghost" onClick={handleBackToPortfolio} className="gap-2 px-2 md:px-4" size="sm">
+                <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+                <span className="hidden sm:inline">Back to Portfolio</span>
+                <span className="sm:hidden">Back</span>
+              </Button>
+              <div className="flex items-center gap-1">
+                {prevProject && (
+                  <Button variant="ghost" size="icon" asChild aria-label={`Go to previous project: ${prevProject.title}`}>
+                    <Link to={`/project/${prevProject.slug}`}>
+                      <ChevronLeft className="w-4 h-4" aria-hidden="true" />
+                    </Link>
+                  </Button>
+                )}
+                {nextProject && (
+                  <Button variant="ghost" size="icon" asChild aria-label={`Go to next project: ${nextProject.title}`}>
+                    <Link to={`/project/${nextProject.slug}`}>
+                      <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                    </Link>
+                  </Button>
+                )}
+              </div>
+              <ThemeToggle />
             </div>
           </div>
         </div>
-      </nav>
+      </header>
 
+      <main id="main-content" className="pt-16">
       {/* Hero Section */}
       <section className="section">
         <div className="container-width">

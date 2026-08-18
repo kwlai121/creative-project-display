@@ -1,4 +1,4 @@
-The development of the EOSIO Dashboard followed a structured approach to ensure both technical excellence and user-centered design:
+The development of Dr Chen Salud Dental followed a structured approach to ensure both technical excellence and user-centered design:
 
 ### Research & Requirements Gathering
 I began by interviewing key stakeholders including block producers, dApp developers, and token holders to understand their monitoring needs. This research revealed the most critical metrics and use cases that would drive the dashboard design.
