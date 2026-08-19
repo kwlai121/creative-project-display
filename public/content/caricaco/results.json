@@ -1,3 +1,18 @@
 {
-  "outcomes": []
+  "outcomes": [
+    {
+      "displayValue": "2",
+      "shortDesc": "brand identities unified into one cohesive page",
+      "icon": "Palette",
+      "color": "text-indigo-600 dark:text-indigo-400",
+      "bgColor": "bg-indigo-50 dark:bg-indigo-950/20"
+    },
+    {
+      "displayValue": "✓",
+      "shortDesc": "fully responsive, desktop to mobile",
+      "icon": "Smartphone",
+      "color": "text-orange-600 dark:text-orange-400",
+      "bgColor": "bg-orange-50 dark:bg-orange-950/20"
+    }
+  ]
 }

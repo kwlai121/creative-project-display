@@ -1,1 +1,1 @@
-An intuitive, accessible, and responsive landing page that maintains a professional look across devices, successfully driving user enrollment through clear, strategic communication of benefits and criteria.
+The result is an intuitive, accessible landing page that holds a professional, unified look across devices for both brands. Every layout and CTA decision was made to drive enrollment through clear, scannable communication of program benefits and certification criteria.

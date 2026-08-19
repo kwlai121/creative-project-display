@@ -1,8 +1,8 @@
-### Information Architecture
-Mapping out user onboarding steps from program details to the certification value proposition.
+### Stakeholder Alignment
+I worked with both organizations to reconcile brand guidelines and program content into a single approved structure before designing any screens.
 
 ### UI Visual Systems
-Blending brand identities with clean typography and custom vector elements.
+I blended both brand identities with clean typography and custom vector elements, keeping enough visual distinction that neither brand felt subordinate to the other.
 
 ### Responsive Optimization
-Restructuring grid layouts and scaling down multi-column content into a seamless vertical mobile flow.
+I restructured multi-column grid layouts into a seamless vertical flow for mobile, testing CTA touch-target sizing at each breakpoint.
