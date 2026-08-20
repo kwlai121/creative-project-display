@@ -41,19 +41,33 @@ export const loadKeyResults = async (projectSlug: string): Promise<any> => {
   }
 };
 
+export const loadColorPalette = async (projectSlug: string): Promise<{ name: string; hex: string }[]> => {
+  try {
+    const response = await fetch(withBase(`/content/${projectSlug}/palette.json`));
+    if (!response.ok) return [];
+    const data = await response.json();
+    return Array.isArray(data.colors) ? data.colors : [];
+  } catch (error) {
+    return [];
+  }
+};
+
 export const loadAllProjectContent = async (projectSlug: string) => {
   const sections = ['challenge', 'solution', 'process', 'results'];
   const content: Record<string, any> = {};
-  
+
   // Load markdown sections
   await Promise.all(
     sections.map(async (section) => {
       content[section] = await loadProjectContent(projectSlug, section);
     })
   );
-  
+
   // Load key results separately (could be JSON or markdown)
   content.keyResults = await loadKeyResults(projectSlug);
-  
+
+  // Load an optional brand color palette (JSON, absent for most projects)
+  content.palette = await loadColorPalette(projectSlug);
+
   return content;
 };

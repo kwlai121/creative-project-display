@@ -1,0 +1,9 @@
+{
+  "colors": [
+    { "name": "Navy", "hex": "#194B9B" },
+    { "name": "Navy Deep", "hex": "#123A7A" },
+    { "name": "Porcelain", "hex": "#EAF0FA" },
+    { "name": "Accent", "hex": "#C43A2D" },
+    { "name": "Ink", "hex": "#1A1A1A" }
+  ]
+}

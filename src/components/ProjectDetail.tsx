@@ -7,6 +7,7 @@ import ThemeToggle from './ThemeToggle';
 import Contact from './Contact';
 import { GalleryModal } from './GalleryModal';
 import Results from './Results';
+import ColorPalette from './ColorPalette';
 import MediaSection from './MediaSection';
 import ReactMarkdown from 'react-markdown';
 import { projects } from '@/data/projects';
@@ -220,6 +221,9 @@ const ProjectDetail = () => {
                     <div className="leading-relaxed prose prose-neutral dark:prose-invert max-w-none text-muted-foreground">
                       <ReactMarkdown>{content.solution || 'Content loading...'}</ReactMarkdown>
                     </div>
+                    {content.palette && content.palette.length > 0 && (
+                      <ColorPalette colors={content.palette} />
+                    )}
                   </div>
 
                   <div className="animate-fade-in [animation-delay:700ms]">
