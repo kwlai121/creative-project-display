@@ -265,7 +265,7 @@ const ProjectDetail = () => {
       <Contact />
 
       {/* Gallery Modal */}
-      {project.gallery && (
+      {project.gallery && project.gallery.length > 0 && (
         <GalleryModal
           images={project.gallery.map(withBase)}
           isOpen={modalOpen}
