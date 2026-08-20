@@ -1,9 +1,8 @@
 {
   "colors": [
-    { "name": "Navy", "hex": "#194B9B" },
-    { "name": "Navy Deep", "hex": "#123A7A" },
-    { "name": "Porcelain", "hex": "#EAF0FA" },
-    { "name": "Accent", "hex": "#C43A2D" },
-    { "name": "Ink", "hex": "#1A1A1A" }
+    { "name": "Ink", "hex": "#242424" },
+    { "name": "Sky Blue", "hex": "#249CD8" },
+    { "name": "Cyan", "hex": "#24C0F0" },
+    { "name": "Teal Green", "hex": "#24B478" }
   ]
 }
