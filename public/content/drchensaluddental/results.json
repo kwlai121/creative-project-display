@@ -1,18 +1,25 @@
 {
   "outcomes": [
     {
-      "displayValue": "Improved",
-      "shortDesc": "Monthly active users",
-      "icon": "Users",
-      "color": "text-blue-600 dark:text-blue-400",
-      "bgColor": "bg-blue-50 dark:bg-blue-950/20"
-    },
-    {
-      "displayValue": "Improved",
-      "shortDesc": "Community votes",
+      "displayValue": "100",
+      "shortDesc": "Lighthouse SEO score, up from a 92 baseline",
       "icon": "TrendingUp",
       "color": "text-green-600 dark:text-green-400",
       "bgColor": "bg-green-50 dark:bg-green-950/20"
+    },
+    {
+      "displayValue": "96",
+      "shortDesc": "Lighthouse Accessibility score",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    },
+    {
+      "displayValue": "70+",
+      "shortDesc": "years of practice history now online",
+      "icon": "Heart",
+      "color": "text-red-500 dark:text-red-400",
+      "bgColor": "bg-red-50 dark:bg-red-950/20"
     }
   ]
 }

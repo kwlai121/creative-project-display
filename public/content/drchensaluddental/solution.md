@@ -1,11 +1,11 @@
-I designed and developed Dr Chen Salud Dental, a comprehensive analytics platform that provides real-time insights into the EOSIO blockchain network. The dashboard integrates data from multiple sources including chain APIs, block explorers, and resource pricing oracles to create a unified view of network activity.
+I built a single-page site engineered around one job: turn 70 years of in-person trust into digital trust for a first-time visitor, then get them into a conversation fast. Multi-channel contact — WhatsApp, phone, and a form — carries equal visual weight throughout, backed by an authenticated email pipeline and a spam-filtered form, then audited post-launch against real accessibility and SEO standards rather than left as one-time visual polish.
 
-The solution features a modular architecture with specialized components for different aspects of the blockchain:
+**Brand palette** — deep navy for clinical trust, paired with a restrained warm accent, chosen after a brand-psychology review flagged the original red/gold pairing as a poor fit for a dental context and recommended the cooler shift:
 
-- **Network Overview**: Real-time metrics on block production, transaction volume, and network congestion
-- **Resource Monitor**: Interactive charts tracking CPU, NET, and RAM usage and costs
-- **Account Analytics**: Detailed analysis of account activity, resource allocation, and token balances
-- **Block Explorer Integration**: Seamless connection to detailed transaction data
-- **Customizable Alerts**: Notification system for important network events and threshold breaches
-
-The dashboard employs responsive design principles to ensure usability across devices, with optimized data loading patterns to maintain performance even when displaying large datasets.
+| Color | Hex |
+|---|---|
+| Navy | `#194B9B` |
+| Navy deep | `#123A7A` |
+| Porcelain | `#EAF0FA` |
+| Accent | `#C43A2D` |
+| Ink | `#1A1A1A` |

@@ -1,16 +1,14 @@
-The development of Dr Chen Salud Dental followed a structured approach to ensure both technical excellence and user-centered design:
-
 ### Research & Requirements Gathering
-I began by interviewing key stakeholders including block producers, dApp developers, and token holders to understand their monitoring needs. This research revealed the most critical metrics and use cases that would drive the dashboard design.
+I mapped the clinic's real constraints: no existing brand assets beyond a name, patients who default to WhatsApp over email, and a family narrative — three generations, since 1952 — to anchor the trust-building strategy.
 
 ### Data Architecture
-The next step involved mapping out the EOSIO data ecosystem and designing an efficient data pipeline. I created a custom API aggregation layer that could pull and normalize data from multiple chain endpoints, ensuring reliability even if individual data sources experienced downtime.
+I structured the site as a single page with anchor-based navigation, wired schema.org Organization markup and Open Graph metadata for how the site is represented off-site, and mapped the form-to-inbox pipeline: WPForms → authenticated SMTP via the Gmail API → the clinic's real inbox.
 
 ### UX Design & Prototyping
-Working in Figma, I developed wireframes and interactive prototypes focusing on information hierarchy and data visualization. The design process included multiple iterations based on user feedback, with particular attention to making complex blockchain concepts accessible through intuitive visualizations.
+I designed the visual system around navy for clinical trust with restrained warm accents, then stress-tested it — a brand-psychology review flagged the original red/gold accent as a poor fit for a dental context and recommended a cooler shift.
 
 ### Frontend Development
-The dashboard was built using React and TypeScript, with D3.js handling the data visualization components. I implemented a state management system that could handle real-time data updates while maintaining application performance. Material UI provided the foundation for the component library, customized to match the project's design language.
+I built the site in WordPress/Elementor with hand-written CSS for the custom design system, responsive behavior down to 640px, and production image assets — logo lockups and hero photography — optimized and served as WebP.
 
 ### Testing & Optimization
-Performance testing was critical given the data-intensive nature of the application. I implemented lazy loading techniques, data caching, and optimized rendering to ensure the dashboard remained responsive even when displaying large datasets or handling frequent updates.
+I ran repeated Lighthouse audits and fixed every flagged issue with evidence: WCAG contrast ratios computed against the relative-luminance formula, heading hierarchy corrected, structured data added, then re-verified after each change.

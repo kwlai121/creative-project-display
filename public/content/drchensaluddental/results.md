@@ -1,13 +1,12 @@
-Dr Chen Salud Dental has become an essential tool for the EOSIO ecosystem, delivering significant value to various stakeholders:
+The site is newly launched — traffic and conversion metrics are still coming in as it completes its first weeks live. What's already measurable:
 
 ### Adoption & Usage
-The dashboard has been adopted by major block producers and development teams across the EOSIO ecosystem, with over 5,000 monthly active users. It has become the go-to resource for network monitoring and analysis.
+I verified the site in Google Search Console, submitted the sitemap, and requested indexing. I also reclaimed the clinic's existing, previously unmanaged Google Business Profile — with its real patient reviews already attached — instead of creating a duplicate listing that would have split that history.
 
 ### Performance Improvements
-By providing clear visibility into network congestion and resource pricing, the dashboard has helped developers optimize their applications for resource efficiency. Several major dApps reported 30-40% reductions in resource costs after using the dashboard to identify optimization opportunities.
-
-### Community Impact
-The tool has democratized access to network data, allowing token holders and community members to make more informed decisions. This has contributed to increased participation in governance and resource allocation discussions.
+Lighthouse SEO went from 92 to 100, and Accessibility from 95 to 96. Core Web Vitals held in the "good" range through every round of changes (LCP ~2.1–2.7s, CLS 0).
 
 ### Technical Achievements
-The dashboard successfully handles real-time data processing for over 2 million daily transactions, with 99.9% uptime and sub-second data refresh rates. The visualization components have been open-sourced and adopted by other blockchain projects.
+I diagnosed and rebuilt a broken email integration into an OAuth2-authenticated pipeline through the Gmail API, added Google reCAPTCHA v3 tuned to filter spam without blocking real patients, and resolved a UI collision between the reCAPTCHA badge and the floating WhatsApp button across breakpoints.
+
+[Visit drchensaluddental.cr →](https://drchensaluddental.cr)
