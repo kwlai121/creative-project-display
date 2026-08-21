@@ -13,6 +13,14 @@ import ReactMarkdown from 'react-markdown';
 import { projects } from '@/data/projects';
 import { loadAllProjectContent } from '@/utils/contentLoader';
 import { withBase } from '@/lib/basePath';
+import type { GalleryItem } from '@/types/project';
+
+const normalizeGalleryItem = (item: string | GalleryItem, index: number, projectTitle: string): GalleryItem => {
+  if (typeof item === 'string') {
+    return { url: item, alt: `${projectTitle} gallery image ${index + 1}` };
+  }
+  return item;
+};
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -21,11 +29,19 @@ const ProjectDetail = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [content, setContent] = useState<Record<string, any>>({});
   const [loading, setLoading] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   
   // Scroll to top when component mounts or slug changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  // Track scroll position for header visual feedback
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Load project content
   useEffect(() => {
@@ -46,14 +62,7 @@ const ProjectDetail = () => {
   const nextProject = currentIndex < publishedProjects.length - 1 ? publishedProjects[currentIndex + 1] : null;
 
   const handleBackToPortfolio = () => {
-    navigate('/');
-    // Use setTimeout to ensure navigation completes before scrolling
-    setTimeout(() => {
-      const projectsSection = document.getElementById('projects');
-      if (projectsSection) {
-        projectsSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    navigate('/', { state: { scrollToProjects: true } });
   };
 
   const openModal = (imageIndex: number) => {
@@ -85,7 +94,7 @@ const ProjectDetail = () => {
       </a>
 
       {/* Fixed header: brand + back to portfolio + prev/next + theme */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-md shadow-sm">
+      <header className={`fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-md transition-shadow duration-300 ${isScrolled ? 'shadow-md border-border/50' : 'shadow-sm'}`}>
         <div className="container-width py-3">
           <div className="flex items-center justify-between gap-2">
             <a href="#" className="text-xl font-medium tracking-tight shrink-0">
@@ -100,16 +109,16 @@ const ProjectDetail = () => {
               </Button>
               <div className="flex items-center gap-1">
                 {prevProject && (
-                  <Button variant="ghost" size="icon" asChild aria-label={`Go to previous project: ${prevProject.title}`}>
+                  <Button variant="ghost" size="icon" asChild aria-label={`Go to previous project: ${prevProject.title}`} className="h-11 w-11 md:h-auto md:w-auto">
                     <Link to={`/project/${prevProject.slug}`}>
-                      <ChevronLeft className="w-4 h-4" aria-hidden="true" />
+                      <ChevronLeft className="w-5 h-5" aria-hidden="true" />
                     </Link>
                   </Button>
                 )}
                 {nextProject && (
-                  <Button variant="ghost" size="icon" asChild aria-label={`Go to next project: ${nextProject.title}`}>
+                  <Button variant="ghost" size="icon" asChild aria-label={`Go to next project: ${nextProject.title}`} className="h-11 w-11 md:h-auto md:w-auto">
                     <Link to={`/project/${nextProject.slug}`}>
-                      <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                      <ChevronRight className="w-5 h-5" aria-hidden="true" />
                     </Link>
                   </Button>
                 )}
@@ -129,6 +138,7 @@ const ProjectDetail = () => {
               <img
                 src={withBase(project.imageUrl)}
                 alt={project.title}
+                fetchPriority="high"
                 className="object-cover w-full h-full"
               />
             </div>
@@ -156,26 +166,30 @@ const ProjectDetail = () => {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-medium mb-4 animate-fade-in">Gallery</h2>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-                {project.gallery.map((image, index) => (
-                  <button
-                    key={index}
-                    onClick={() => openModal(index)}
-                    className={`aspect-[4/3] relative overflow-hidden rounded-xl animate-fade-in [animation-delay:${300 + index * 100}ms] group cursor-pointer`}
-                  >
-                    <img
-                      src={withBase(image)}
-                      alt={`${project.title} gallery image ${index + 1}`}
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                      <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg>
+                {project.gallery.map((item, index) => {
+                  const galleryItem = normalizeGalleryItem(item, index, project.title);
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => openModal(index)}
+                      className={`aspect-[4/3] relative overflow-hidden rounded-xl animate-fade-in [animation-delay:${300 + index * 100}ms] group cursor-pointer focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none`}
+                    >
+                      <img
+                        src={withBase(galleryItem.url)}
+                        alt={galleryItem.alt}
+                        loading="lazy"
+                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                        <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                          </svg>
+                        </div>
                       </div>
-                    </div>
-                  </button>
-                ))}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -245,10 +259,41 @@ const ProjectDetail = () => {
 
             {/* Sidebar */}
             <div className="md:col-span-1">
-              <div className="space-y-8">
+              <div className="space-y-8 md:sticky md:top-24">
+                {/* Project Info */}
+                <div className="animate-fade-in [animation-delay:400ms] p-5 rounded-xl border border-border/50 bg-card/50">
+                  <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">Project Info</h3>
+                  <dl className="space-y-3">
+                    {project.category && (
+                      <div className="flex justify-between items-baseline">
+                        <dt className="text-sm text-muted-foreground">Type</dt>
+                        <dd className="text-sm font-medium">{project.category}</dd>
+                      </div>
+                    )}
+                    {project.role && (
+                      <div className="flex justify-between items-baseline">
+                        <dt className="text-sm text-muted-foreground">Role</dt>
+                        <dd className="text-sm font-medium">{project.role}</dd>
+                      </div>
+                    )}
+                    {project.year && (
+                      <div className="flex justify-between items-baseline">
+                        <dt className="text-sm text-muted-foreground">Year</dt>
+                        <dd className="text-sm font-medium">{project.year}</dd>
+                      </div>
+                    )}
+                    {project.client && (
+                      <div className="flex justify-between items-baseline">
+                        <dt className="text-sm text-muted-foreground">Client</dt>
+                        <dd className="text-sm font-medium">{project.client}</dd>
+                      </div>
+                    )}
+                  </dl>
+                </div>
+
                 {/* Technologies */}
-                <div className="animate-fade-in [animation-delay:400ms]">
-                  <h3 className="text-lg font-medium mb-4">Technologies</h3>
+                <div className="animate-fade-in [animation-delay:500ms]">
+                  <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">Technologies</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="secondary">
@@ -258,12 +303,28 @@ const ProjectDetail = () => {
                   </div>
                 </div>
 
+                {/* Back to Portfolio (sidebar context) */}
+                <div className="animate-fade-in [animation-delay:600ms]">
+                  <Button variant="outline" size="sm" onClick={handleBackToPortfolio} className="w-full gap-2">
+                    <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+                    Back to Portfolio
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+
+      {/* Visual separator before Contact */}
+      <div className="section" aria-hidden="true">
+        <div className="container-width">
+          <div className="max-w-4xl mx-auto">
+            <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          </div>
+        </div>
+      </div>
 
       {/* Contact Section */}
       <Contact />

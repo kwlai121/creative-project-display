@@ -3,14 +3,26 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import FocusLock from 'react-focus-lock';
+import type { GalleryItem } from '@/types/project';
 
 interface GalleryModalProps {
-  images: string[];
+  images: (string | GalleryItem)[];
   isOpen: boolean;
   onClose: () => void;
   initialIndex: number;
   projectTitle: string;
 }
+
+const getImageUrl = (item: string | GalleryItem): string => {
+  return typeof item === 'string' ? item : item.url;
+};
+
+const getImageAlt = (item: string | GalleryItem, index: number, projectTitle: string): string => {
+  if (typeof item === 'string') {
+    return `${projectTitle} - Gallery Image ${index + 1}`;
+  }
+  return item.alt || `${projectTitle} - Gallery Image ${index + 1}`;
+};
 
 export const GalleryModal: React.FC<GalleryModalProps> = ({
   images,
@@ -161,8 +173,9 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
               onMouseLeave={handleImageMouseUp}
             >
               <img
-                src={images[currentIndex]}
-                alt={`${projectTitle} - Gallery Image ${currentIndex + 1}`}
+                src={getImageUrl(images[currentIndex])}
+                alt={getImageAlt(images[currentIndex], currentIndex, projectTitle)}
+                loading="eager"
                 onClick={handleImageClick}
                 onMouseDown={handleImageMouseDown}
                 draggable={false}
@@ -193,7 +206,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
                     aria-current={index === currentIndex ? 'true' : 'false'}
                   >
                     <img
-                      src={image}
+                      src={getImageUrl(image)}
                       alt=""
                       className="w-full h-full object-cover"
                     />

@@ -195,10 +195,10 @@ const MetricItem = ({ result, index }: { result: ResultData | string, index: num
   
   return (
     <div 
-      className="inline-flex items-center gap-3 px-4 py-3 rounded-full border bg-muted/30 animate-fade-in mr-3 mb-3"
+      className="inline-flex items-center gap-3 px-4 py-3 rounded-full border bg-muted/30 animate-fade-in"
       style={{ animationDelay: `${index * 50}ms` }}
     >
-      <Icon size={18} className="text-muted-foreground" />
+      <Icon size={18} className="text-muted-foreground" aria-hidden="true" />
       <span className="text-lg font-semibold text-foreground">
         {metric.displayValue}
       </span>
@@ -238,7 +238,7 @@ const Results: React.FC<ResultsProps> = ({ content }) => {
         </p>
       </div>
       
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap gap-2">
         {results.map((result, index) => (
           <MetricItem
             key={index}

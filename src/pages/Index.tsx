@@ -1,5 +1,6 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProjectGrid from '@/components/ProjectGrid';
@@ -9,6 +10,18 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToProjects) {
+      const el = document.getElementById('projects');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
+
   return (
     <div className="min-h-screen bg-pattern-grid">
       <Navbar />

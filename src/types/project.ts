@@ -13,6 +13,11 @@ export interface ProjectIframe {
   width?: string;
 }
 
+export interface GalleryItem {
+  url: string;
+  alt: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -21,8 +26,12 @@ export interface Project {
   category: string;
   imageUrl: string;
   technologies: string[];
-  gallery?: string[];
+  gallery?: (string | GalleryItem)[];
   video?: ProjectVideo;
   iframe?: ProjectIframe;
   published: boolean;
+  role?: string;
+  year?: string;
+  client?: string;
+  liveUrl?: string;
 }
