@@ -97,10 +97,10 @@ const ProjectDetail = () => {
       <header className={`fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-md transition-shadow duration-300 ${isScrolled ? 'shadow-md border-border/50' : 'shadow-sm'}`}>
         <div className="container-width py-3">
           <div className="flex items-center justify-between gap-2">
-            <a href="#" className="text-xl font-medium tracking-tight shrink-0">
+            <Link to="/" className="text-xl font-medium tracking-tight shrink-0">
               <span className="sr-only">Designer Portfolio</span>
               <span className="text-primary">K.Lai</span>
-            </a>
+            </Link>
             <div className="flex items-center gap-1 md:gap-4 min-w-0">
               <Button variant="ghost" onClick={handleBackToPortfolio} className="gap-2 px-2 md:px-4" size="sm">
                 <ArrowLeft className="w-4 h-4" aria-hidden="true" />
