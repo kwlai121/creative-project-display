@@ -37,8 +37,10 @@ const Quotes = () => {
                 key={index}
                 className={`group animate-fade-in [animation-delay:${200 + index * 150}ms]`}
               >
-                <div className="relative p-6 rounded-lg bg-card border border-border/50 hover:border-border transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                  <Quote className="w-5 h-5 text-primary mb-4 opacity-60" aria-hidden="true" />
+                <div className="relative p-6 rounded-2xl bg-card border border-border/50 hover:border-brand/30 transition-all duration-300 hover:shadow-glow hover:-translate-y-1">
+                  <div className="w-9 h-9 flex items-center justify-center rounded-full bg-brand/10 mb-4">
+                    <Quote className="w-4 h-4 text-brand" aria-hidden="true" />
+                  </div>
                   
                   <figure>
                     <blockquote className="text-foreground/80 leading-relaxed mb-6 italic">

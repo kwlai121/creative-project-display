@@ -8,8 +8,8 @@ const About = () => {
       <div className="container-width">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="order-2 md:order-1">
-            <div className="aspect-square max-w-md mx-auto rounded-full overflow-hidden">
-              <img 
+            <div className="aspect-square max-w-md mx-auto rounded-full overflow-hidden ring-4 ring-brand/15 ring-offset-4 ring-offset-background">
+              <img
                 src={withBase("/images/klai-me.webp")}
                 alt="King, happily sitting next to a lake."
                 className="w-full h-full object-cover"
@@ -18,10 +18,12 @@ const About = () => {
           </div>
           
           <div className="order-1 md:order-2">
-            <span className="inline-block px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-medium bg-brand/10 text-brand rounded-full mb-4">
               About Me
             </span>
-<h2 className="mb-6">To build a better Internet</h2>
+            <h2 className="mb-6">
+              To build a <span className="text-brand">better</span> Internet
+            </h2>
             
             <div className="space-y-4 text-muted-foreground">
               <p>

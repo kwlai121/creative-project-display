@@ -1,13 +1,23 @@
 import React from "react";
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center pt-20 pb-16 md:pt-24 md:pb-24">
-      <div className="container-width">
+    <section className="relative min-h-screen flex items-center pt-20 pb-16 md:pt-24 md:pb-24 overflow-hidden">
+      {/* Decorative ambient blobs */}
+      <div
+        className="brand-blob animate-float-slow -top-40 -left-40 w-[30rem] h-[30rem] md:w-[38rem] md:h-[38rem]"
+        aria-hidden="true"
+      />
+      <div
+        className="brand-blob animate-float-slow-reverse top-1/4 -right-48 w-[26rem] h-[26rem] md:w-[32rem] md:h-[32rem] opacity-60"
+        aria-hidden="true"
+      />
+
+      <div className="container-width relative">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="space-y-2 animate-slide-down">
             <h1 className="hero-title mt-4 px-4">
-              Designer <span className="text-[0.55em] font-normal mx-1 align-middle">/</span> Analyst <br />
-              <span className="text-[0.55em] font-normal mx-1 align-middle">/</span> Doer
+              Designer <span className="text-[0.55em] font-normal mx-1 align-middle text-brand">/</span> Analyst <br />
+              <span className="text-[0.55em] font-normal mx-1 align-middle text-brand">/</span> Doer
             </h1>
           </div>
 
@@ -18,7 +28,7 @@ const Hero = () => {
           <div className="pt-4 animate-fade-in [animation-delay:400ms]">
             <a
               href="#projects"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground transition-all hover:bg-primary/90"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-brand text-brand-foreground shadow-glow transition-all hover:-translate-y-0.5 hover:brightness-110"
             >
               Check out my projects
               <svg

@@ -99,7 +99,7 @@ const ProjectDetail = () => {
           <div className="flex items-center justify-between gap-2">
             <Link to="/" className="text-xl font-medium tracking-tight shrink-0">
               <span className="sr-only">Designer Portfolio</span>
-              <span className="text-primary">K.Lai</span>
+              <span className="text-primary">K<span className="text-brand">.</span>Lai</span>
             </Link>
             <div className="flex items-center gap-1 md:gap-4 min-w-0">
               <Button variant="ghost" onClick={handleBackToPortfolio} className="gap-2 px-2 md:px-4" size="sm">
@@ -144,7 +144,7 @@ const ProjectDetail = () => {
             </div>
             
             <div className="mb-8 animate-fade-in [animation-delay:200ms]">
-              <Badge variant="secondary" className="mb-4">{project.category}</Badge>
+              <Badge variant="brand" className="mb-4">{project.category}</Badge>
               <h1 className="text-4xl md:text-5xl font-medium mb-6">{project.title}</h1>
               <p className="text-xl text-muted-foreground max-w-2xl">{project.description}</p>
             </div>

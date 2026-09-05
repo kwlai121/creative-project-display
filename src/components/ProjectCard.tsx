@@ -41,11 +41,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       <div className="p-6">
         <div className="mb-2">
-          <Badge variant="secondary">
+          <Badge variant="brand">
             {category}
           </Badge>
         </div>
-        <h3 className="text-xl font-medium mt-2 mb-2 group-hover:text-primary transition-colors">{title}</h3>
+        <h3 className="text-xl font-medium mt-2 mb-2 group-hover:text-brand transition-colors">{title}</h3>
         <p className="text-muted-foreground text-sm">{description}</p>
       </div>
     </Link>

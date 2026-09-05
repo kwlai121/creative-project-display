@@ -16,7 +16,7 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-pattern-grid flex items-center justify-center">
       <div className="text-center max-w-md mx-auto px-6">
-        <p className="text-7xl font-heading font-medium text-primary mb-4">404</p>
+        <p className="text-7xl font-heading font-medium text-brand mb-4">404</p>
         <h1 className="text-2xl font-medium mb-4">Page not found</h1>
         <p className="text-muted-foreground mb-8">
           The page you're looking for doesn't exist or has been moved.

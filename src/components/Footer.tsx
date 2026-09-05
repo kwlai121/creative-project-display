@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="py-10 border-t border-border">
+    <footer className="accent-hairline py-10 border-t border-border">
       <div className="container-width">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-sm text-muted-foreground">
@@ -30,14 +30,14 @@ const Footer = () => {
               href="https://www.linkedin.com/in/king-lai-3ab14324/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-brand transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" aria-hidden="true" />
             </a>
             <a
               href="mailto:kwlai121@gmail.com"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-brand transition-colors"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" aria-hidden="true" />
