@@ -5,7 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode, command }) => ({
-  base: command === "build" ? "/creative-project-display/" : "/",
+  // GitHub Pages serves this app from a /creative-project-display/ subpath, so
+  // production builds default to that base. Netlify (and any host serving
+  // from the domain root) overrides it via VITE_BASE_PATH — see netlify.toml.
+  base: process.env.VITE_BASE_PATH ?? (command === "build" ? "/creative-project-display/" : "/"),
   server: {
     host: "::",
     port: 8080,
