@@ -20,8 +20,15 @@ export const drChenSaludDentalProject = {
     "SpeedyCache",
     "WebP",
   ],
-  // Real gallery screenshots pending — removed the leftover EOSIO dashboard
-  // images rather than show a blockchain UI under a dental clinic case study.
-  gallery: [],
+  gallery: [
+    {
+      url: "/images/projects/drchensaluddental/gallery-desktop-mockup.webp",
+      alt: "Dr. Chen Salud Dental homepage shown in a desktop browser, featuring the hero section with WhatsApp scheduling and clinic highlights"
+    },
+    {
+      url: "/images/projects/drchensaluddental/gallery-mobile-mockup.webp",
+      alt: "Dr. Chen Salud Dental homepage shown on a mobile phone, with the responsive hero section and sticky navigation"
+    },
+  ],
   published: true, // Set to true to make this project visible
 };
