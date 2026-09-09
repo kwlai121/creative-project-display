@@ -332,7 +332,9 @@ const ProjectDetail = () => {
       {/* Gallery Modal */}
       {project.gallery && project.gallery.length > 0 && (
         <GalleryModal
-          images={project.gallery.map(withBase)}
+          images={project.gallery.map((item) =>
+            typeof item === 'string' ? withBase(item) : { ...item, url: withBase(item.url) }
+          )}
           isOpen={modalOpen}
           onClose={() => setModalOpen(false)}
           initialIndex={selectedImageIndex}
