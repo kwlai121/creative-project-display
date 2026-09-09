@@ -22,8 +22,11 @@ export interface Project {
   id: string;
   slug: string;
   title: string;
+  title_es?: string;
   description: string;
+  description_es?: string;
   category: string;
+  category_es?: string;
   imageUrl: string;
   technologies: string[];
   gallery?: (string | GalleryItem)[];
@@ -31,6 +34,7 @@ export interface Project {
   iframe?: ProjectIframe;
   published: boolean;
   role?: string;
+  role_es?: string;
   year?: string;
   client?: string;
   liveUrl?: string;

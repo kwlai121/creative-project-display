@@ -2,9 +2,11 @@ import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const NotFound = () => {
   const location = useLocation();
+  const { t } = useLanguage();
 
   useEffect(() => {
     console.error(
@@ -17,14 +19,14 @@ const NotFound = () => {
     <div className="min-h-screen bg-pattern-grid flex items-center justify-center">
       <div className="text-center max-w-md mx-auto px-6">
         <p className="text-7xl font-heading font-medium text-brand mb-4">404</p>
-        <h1 className="text-2xl font-medium mb-4">Page not found</h1>
+        <h1 className="text-2xl font-medium mb-4">{t('notFound.heading')}</h1>
         <p className="text-muted-foreground mb-8">
-          The page you're looking for doesn't exist or has been moved.
+          {t('notFound.description')}
         </p>
         <Button asChild>
           <Link to="/" className="gap-2">
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-            Back to Portfolio
+            {t('projectDetail.backToPortfolio')}
           </Link>
         </Button>
       </div>

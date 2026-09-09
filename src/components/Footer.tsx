@@ -1,27 +1,29 @@
 
 import React from 'react';
 import { Linkedin, Mail } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+  const { t } = useLanguage();
+
   return (
     <footer className="accent-hairline py-10 border-t border-border">
       <div className="container-width">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} K.Lai. All rights reserved.
+            © {currentYear} K.Lai. {t('footer.rights')}
           </p>
-          
+
           <nav className="flex items-center space-x-8" aria-label="Footer navigation">
             <a href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Projects
+              {t('footer.projects')}
             </a>
             <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              About
+              {t('nav.about')}
             </a>
             <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Contact
+              {t('nav.contact')}
             </a>
           </nav>
 
@@ -31,14 +33,14 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-brand transition-colors"
-              aria-label="LinkedIn"
+              aria-label={t('footer.linkedinAria')}
             >
               <Linkedin className="w-5 h-5" aria-hidden="true" />
             </a>
             <a
               href="mailto:kwlai121@gmail.com"
               className="text-muted-foreground hover:text-brand transition-colors"
-              aria-label="Email"
+              aria-label={t('footer.emailAria')}
             >
               <Mail className="w-5 h-5" aria-hidden="true" />
             </a>

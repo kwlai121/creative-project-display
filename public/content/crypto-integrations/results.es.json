@@ -1,0 +1,32 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "$10M+",
+      "shortDesc": "en volumen de transacciones",
+      "icon": "TrendingUp",
+      "color": "text-green-600 dark:text-green-400",
+      "bgColor": "bg-green-50 dark:bg-green-950/20"
+    },
+    {
+      "displayValue": "99.9%",
+      "shortDesc": "de disponibilidad de la plataforma",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    },
+    {
+      "displayValue": "100+",
+      "shortDesc": "empresas integradas",
+      "icon": "Users",
+      "color": "text-blue-600 dark:text-blue-400",
+      "bgColor": "bg-blue-50 dark:bg-blue-950/20"
+    },
+    {
+      "displayValue": "0",
+      "shortDesc": "brechas de seguridad",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    }
+  ]
+}

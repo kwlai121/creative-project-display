@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { withBase } from '@/lib/basePath';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="section bg-secondary/30">
       <div className="container-width">
@@ -16,43 +19,37 @@ const About = () => {
               />
             </div>
           </div>
-          
+
           <div className="order-1 md:order-2">
             <span className="inline-block px-3 py-1 text-xs font-medium bg-brand/10 text-brand rounded-full mb-4">
-              About Me
+              {t('about.eyebrow')}
             </span>
             <h2 className="mb-6">
-              To build a <span className="text-brand">better</span> Internet
+              {t('about.headingPre')}<span className="text-brand">{t('about.headingHighlight')}</span>{t('about.headingPost')}
             </h2>
-            
+
             <div className="space-y-4 text-muted-foreground">
-              <p>
-                As a designer and technologist with extensive experience in digital environments, I've witnessed and adapted to the many iterations of the Internet. My work has spanned organizational contexts from experimental-focused startups to process-driven enterprises, each presenting unique opportunities for innovation.
-              </p>
-              <p>
-                My design philosophy is built on understanding people's needs, business goals, and technological possibilities to create solutions that innovate, but mainly solve real problems.
-              </p>
-              <p>
-                Let's work together on the quest to build a better Internet.
-              </p>
+              <p>{t('about.paragraph1')}</p>
+              <p>{t('about.paragraph2')}</p>
+              <p>{t('about.paragraph3')}</p>
             </div>
-            
+
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="space-y-1">
-                <h3 className="text-sm font-medium text-foreground">Design Tools</h3>
-                <p className="text-sm text-muted-foreground">Figma, Lovable, Protopie, Adobe Suite, Affinity</p>
+                <h3 className="text-sm font-medium text-foreground">{t('about.designToolsLabel')}</h3>
+                <p className="text-sm text-muted-foreground">{t('about.designToolsValue')}</p>
               </div>
               <div className="space-y-1">
-                <h3 className="text-sm font-medium text-foreground">Methodology</h3>
-                <p className="text-sm text-muted-foreground">Human-centered Design, Design Thinking, Lean UX, Agile</p>
+                <h3 className="text-sm font-medium text-foreground">{t('about.methodologyLabel')}</h3>
+                <p className="text-sm text-muted-foreground">{t('about.methodologyValue')}</p>
               </div>
               <div className="space-y-1">
-                <h3 className="text-sm font-medium text-foreground">Advocacy</h3>
-                <p className="text-sm text-muted-foreground">Usability, Accessibility, Ethical AI</p>
+                <h3 className="text-sm font-medium text-foreground">{t('about.advocacyLabel')}</h3>
+                <p className="text-sm text-muted-foreground">{t('about.advocacyValue')}</p>
               </div>
               <div className="space-y-1">
-                <h3 className="text-sm font-medium text-foreground">Collaboration</h3>
-                <p className="text-sm text-muted-foreground">Design Systems, Workshops, Mentoring, Open Source</p>
+                <h3 className="text-sm font-medium text-foreground">{t('about.collaborationLabel')}</h3>
+                <p className="text-sm text-muted-foreground">{t('about.collaborationValue')}</p>
               </div>
             </div>
           </div>

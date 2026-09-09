@@ -1,0 +1,18 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "2do Lugar",
+      "shortDesc": "Ganador de hackathon",
+      "icon": "Trophy",
+      "color": "text-red-500 dark:text-red-400",
+      "bgColor": "bg-red-50 dark:bg-red-950/20"
+    },
+    {
+      "displayValue": "Votos",
+      "shortDesc": "Logró el estatus de productor de bloques otorgado por la comunidad",
+      "icon": "ThumbsUp",
+      "color": "text-blue-600 dark:text-blue-400",
+      "bgColor": "bg-blue-50 dark:bg-blue-950/20"
+    }
+  ]
+}

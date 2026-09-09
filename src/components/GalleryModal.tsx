@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import FocusLock from 'react-focus-lock';
 import type { GalleryItem } from '@/types/project';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { interpolate } from '@/lib/translations';
 
 interface GalleryModalProps {
   images: (string | GalleryItem)[];
@@ -17,11 +19,17 @@ const getImageUrl = (item: string | GalleryItem): string => {
   return typeof item === 'string' ? item : item.url;
 };
 
-const getImageAlt = (item: string | GalleryItem, index: number, projectTitle: string): string => {
+const getImageAlt = (
+  item: string | GalleryItem,
+  index: number,
+  projectTitle: string,
+  altFallbackTemplate: string
+): string => {
+  const fallback = interpolate(altFallbackTemplate, { title: projectTitle, index: String(index + 1) });
   if (typeof item === 'string') {
-    return `${projectTitle} - Gallery Image ${index + 1}`;
+    return fallback;
   }
-  return item.alt || `${projectTitle} - Gallery Image ${index + 1}`;
+  return item.alt || fallback;
 };
 
 export const GalleryModal: React.FC<GalleryModalProps> = ({
@@ -31,6 +39,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
   initialIndex,
   projectTitle
 }) => {
+  const { t } = useLanguage();
   const MIN_SCALE = 1;
   const MAX_SCALE = 4;
   const CLICK_ZOOM_SCALE = 2;
@@ -129,7 +138,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
               size="icon"
               onClick={onClose}
               className="absolute top-4 right-4 z-50 text-white hover:bg-white/20"
-              aria-label="Close gallery"
+              aria-label={t('gallery.close')}
             >
               <X className="w-6 h-6" aria-hidden="true" />
             </Button>
@@ -147,7 +156,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
                   size="icon"
                   onClick={prevImage}
                   className="absolute left-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
-                  aria-label="Previous image"
+                  aria-label={t('gallery.previous')}
                 >
                   <ChevronLeft className="w-8 h-8" aria-hidden="true" />
                 </Button>
@@ -157,7 +166,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
                   size="icon"
                   onClick={nextImage}
                   className="absolute right-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
-                  aria-label="Next image"
+                  aria-label={t('gallery.next')}
                 >
                   <ChevronRight className="w-8 h-8" aria-hidden="true" />
                 </Button>
@@ -174,7 +183,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
             >
               <img
                 src={getImageUrl(images[currentIndex])}
-                alt={getImageAlt(images[currentIndex], currentIndex, projectTitle)}
+                alt={getImageAlt(images[currentIndex], currentIndex, projectTitle, t('gallery.imageAltFallback'))}
                 loading="eager"
                 onClick={handleImageClick}
                 onMouseDown={handleImageMouseDown}
@@ -186,7 +195,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
                 className={`h-[calc(100vh-120px)] w-auto max-w-full object-contain select-none ${
                   isZoomed ? (isDragging ? 'cursor-grabbing' : 'cursor-grab') : 'cursor-zoom-in'
                 }`}
-                aria-label={isZoomed ? 'Scroll or drag to pan, click to zoom out' : 'Scroll or click to zoom in'}
+                aria-label={isZoomed ? t('gallery.zoomOutHint') : t('gallery.zoomInHint')}
               />
             </div>
 
@@ -202,7 +211,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
                         ? 'border-white scale-110' 
                         : 'border-white/30 hover:border-white/60'
                     }`}
-                    aria-label={`View image ${index + 1} of ${images.length}`}
+                    aria-label={interpolate(t('gallery.viewImage'), { current: String(index + 1), total: String(images.length) })}
                     aria-current={index === currentIndex ? 'true' : 'false'}
                   >
                     <img

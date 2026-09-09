@@ -3,7 +3,9 @@ export const caricacoProject = {
   slug: "caricaco",
   title: "Fundación Caricaco",
   description: "A responsive landing page translating a dense academic curriculum and dual-brand partnership into a clear, high-converting single-page experience.",
+  description_es: "Una landing page responsiva que traduce un denso currículo académico y una alianza de doble marca en una experiencia de una sola página, clara y con alta conversión.",
   category: "UI/UX Design",
+  category_es: "Diseño UI/UX",
   imageUrl: "/images/projects/caricaco-foundation/hero.webp",
   technologies: ["Figma", "Responsive Design", "Design Systems"],
   gallery: [
@@ -17,6 +19,7 @@ export const caricacoProject = {
     },
   ],
   role: "Lead Designer",
+  role_es: "Diseñador Líder",
   year: "2024",
   client: "Fundación Caricaco",
   published: true,

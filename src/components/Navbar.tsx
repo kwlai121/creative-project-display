@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 import ThemeToggle from './ThemeToggle';
+import LanguageToggle from './LanguageToggle';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+  const { t } = useLanguage();
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -13,22 +16,22 @@ const Navbar = () => {
         setScrolled(isScrolled);
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled]);
-  
+
   return (
     <>
       {/* Skip to main content link */}
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
       >
-        Skip to main content
+        {t('nav.skipToContent')}
       </a>
-      
-      <header 
+
+      <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-6 py-4",
           scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
@@ -36,41 +39,43 @@ const Navbar = () => {
       >
         <div className="container-width flex items-center justify-between">
         <a href="#" className="text-xl font-medium tracking-tight">
-          <span className="sr-only">Designer Portfolio</span>
+          <span className="sr-only">{t('nav.brandSr')}</span>
           <span className="text-primary">K<span className="text-brand">.</span>Lai</span>
         </a>
-        
+
         <nav className="hidden md:flex items-center space-x-8" aria-label="Main navigation">
-          <a 
-            href="#projects" 
+          <a
+            href="#projects"
             className="nav-link"
           >
-            Portfolio
+            {t('nav.portfolio')}
           </a>
-          <a 
-            href="#about" 
+          <a
+            href="#about"
             className="nav-link"
           >
-            About
+            {t('nav.about')}
           </a>
-          <a 
-            href="#contact" 
+          <a
+            href="#contact"
             className="nav-link"
           >
-            Contact
+            {t('nav.contact')}
           </a>
+          <LanguageToggle />
           <ThemeToggle />
         </nav>
-        
+
         <div className="md:hidden flex items-center space-x-2">
+          <LanguageToggle />
           <ThemeToggle />
-          <button 
-            className="p-2" 
+          <button
+            className="p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
           >
-            <span className="sr-only">{mobileMenuOpen ? 'Close menu' : 'Open menu'}</span>
+            <span className="sr-only">{mobileMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')}</span>
             {mobileMenuOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -86,34 +91,34 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      
+
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div id="mobile-menu" className="md:hidden absolute top-full left-0 right-0 bg-background border-t shadow-lg animate-fade-in duration-300">
-          <nav 
+          <nav
             className="container-width py-4 flex flex-col space-y-4"
             aria-label="Mobile navigation"
           >
-            <a 
-              href="#projects" 
-              className="nav-link py-2 px-4 hover:bg-muted rounded-md" 
+            <a
+              href="#projects"
+              className="nav-link py-2 px-4 hover:bg-muted rounded-md"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Portfolio
+              {t('nav.portfolio')}
             </a>
-            <a 
-              href="#about" 
-              className="nav-link py-2 px-4 hover:bg-muted rounded-md" 
+            <a
+              href="#about"
+              className="nav-link py-2 px-4 hover:bg-muted rounded-md"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About
+              {t('nav.about')}
             </a>
-            <a 
-              href="#contact" 
-              className="nav-link py-2 px-4 hover:bg-muted rounded-md" 
+            <a
+              href="#contact"
+              className="nav-link py-2 px-4 hover:bg-muted rounded-md"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              {t('nav.contact')}
             </a>
           </nav>
         </div>

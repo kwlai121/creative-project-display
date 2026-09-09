@@ -1,0 +1,1 @@
+El éxito de este concepto dependió de la implementación de soluciones para múltiples errores de UX que afectan a las aplicaciones blockchain, y que generalmente actúan como barreras para atraer nuevos usuarios.

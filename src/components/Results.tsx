@@ -1,14 +1,15 @@
 import React from 'react';
-import { 
-  TrendingUp, 
-  Users, 
-  Heart, 
-  Target, 
-  Palette, 
-  Smartphone, 
+import {
+  TrendingUp,
+  Users,
+  Heart,
+  Target,
+  Palette,
+  Smartphone,
   Shield,
   CheckCircle
 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ResultData {
   value: string;
@@ -210,6 +211,8 @@ const MetricItem = ({ result, index }: { result: ResultData | string, index: num
 };
 
 const Results: React.FC<ResultsProps> = ({ content }) => {
+  const { t } = useLanguage();
+
   if (!content) return null;
   
   let results: (ResultData | string)[] = [];
@@ -232,9 +235,9 @@ const Results: React.FC<ResultsProps> = ({ content }) => {
   return (
     <div>
       <div className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">Key Results</h2>
+        <h2 className="text-2xl font-medium mb-2">{t('results.heading')}</h2>
         <p className="text-sm text-muted-foreground">
-          Measurable impact and results achieved through this project
+          {t('results.subtext')}
         </p>
       </div>
       

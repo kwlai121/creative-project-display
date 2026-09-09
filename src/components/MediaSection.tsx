@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProjectVideo, ProjectIframe } from '@/types/project';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface MediaSectionProps {
   video?: ProjectVideo;
@@ -7,6 +8,8 @@ interface MediaSectionProps {
 }
 
 const MediaSection: React.FC<MediaSectionProps> = ({ video, iframe }) => {
+  const { t } = useLanguage();
+
   const getEmbedUrl = (url: string, type?: string): string => {
     // YouTube URL conversion
     if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
@@ -36,7 +39,7 @@ const MediaSection: React.FC<MediaSectionProps> = ({ video, iframe }) => {
           className="w-full h-full object-cover rounded-xl"
         >
           <source src={video.url} type={`video/${video.type || 'mp4'}`} />
-          Your browser does not support the video tag.
+          {t('media.videoFallback')}
         </video>
       );
     }
@@ -44,7 +47,7 @@ const MediaSection: React.FC<MediaSectionProps> = ({ video, iframe }) => {
     return (
       <iframe
         src={embedUrl}
-        title={video.title || 'Project Video'}
+        title={video.title || t('media.videoDefaultTitle')}
         className="w-full h-full rounded-xl"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -57,7 +60,7 @@ const MediaSection: React.FC<MediaSectionProps> = ({ video, iframe }) => {
     return (
       <iframe
         src={iframe.url}
-        title={iframe.title || 'Project Demo'}
+        title={iframe.title || t('media.iframeDefaultTitle')}
         className="w-full h-full rounded-xl border-0"
         style={{ 
           height: iframe.height || '500px',

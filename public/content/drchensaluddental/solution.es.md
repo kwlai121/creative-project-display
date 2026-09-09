@@ -1,0 +1,3 @@
+Construí un sitio de una sola página diseñado en torno a un solo trabajo: convertir 70 años de confianza presencial en confianza digital para un visitante de primera vez, y luego llevarlo rápidamente a una conversación. El contacto multicanal — WhatsApp, teléfono y un formulario — tiene el mismo peso visual en todo el sitio, respaldado por un flujo de correo autenticado y un formulario filtrado contra spam, luego auditado después del lanzamiento contra estándares reales de accesibilidad y SEO en lugar de dejarlo como un pulido visual de una sola vez.
+
+**Paleta de marca** — una marca dental con degradado de azul a verde-azulado combinada con texto casi negro para el nombre de la clínica, manteniendo la identidad clínica y serena en lugar de clínica y fría.

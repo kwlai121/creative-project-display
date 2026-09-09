@@ -1,0 +1,18 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "2",
+      "shortDesc": "identidades de marca unificadas en una sola página cohesiva",
+      "icon": "Palette",
+      "color": "text-indigo-600 dark:text-indigo-400",
+      "bgColor": "bg-indigo-50 dark:bg-indigo-950/20"
+    },
+    {
+      "displayValue": "✓",
+      "shortDesc": "totalmente responsiva, de escritorio a móvil",
+      "icon": "Smartphone",
+      "color": "text-orange-600 dark:text-orange-400",
+      "bgColor": "bg-orange-50 dark:bg-orange-950/20"
+    }
+  ]
+}

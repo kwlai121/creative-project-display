@@ -1,0 +1,32 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "✓",
+      "shortDesc": "Presentación visual mejorada con datos estructurados",
+      "icon": "CheckCircle",
+      "color": "text-primary",
+      "bgColor": "bg-primary/10"
+    },
+    {
+      "displayValue": "✓",
+      "shortDesc": "Elementos interactivos para mejor interacción del usuario",
+      "icon": "Users",
+      "color": "text-blue-600 dark:text-blue-400",
+      "bgColor": "bg-blue-50 dark:bg-blue-950/20"
+    },
+    {
+      "displayValue": "✓",
+      "shortDesc": "Estructura de datos mejorada para compatibilidad multiplataforma",
+      "icon": "Smartphone",
+      "color": "text-orange-600 dark:text-orange-400",
+      "bgColor": "bg-orange-50 dark:bg-orange-950/20"
+    },
+    {
+      "displayValue": "✓",
+      "shortDesc": "Validación de prototipo para interfaces de chatbot de nueva generación",
+      "icon": "Target",
+      "color": "text-purple-600 dark:text-purple-400",
+      "bgColor": "bg-purple-50 dark:bg-purple-950/20"
+    }
+  ]
+}

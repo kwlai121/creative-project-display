@@ -1,0 +1,18 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "25+",
+      "shortDesc": "Años de experiencia de la empresa representados",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    },
+    {
+      "displayValue": "180+",
+      "shortDesc": "Proyectos entregados exhibidos",
+      "icon": "CheckCircle",
+      "color": "text-primary",
+      "bgColor": "bg-primary/10"
+    }
+  ]
+}

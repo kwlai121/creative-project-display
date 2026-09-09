@@ -1,0 +1,1 @@
+Desarrollamos una interfaz limpia y altamente estructurada aprovechando la tipografía Poppins para asegurar una legibilidad óptima. Se implementó una paleta de colores vibrante anclada en acentos de naranja brillante para resaltar las llamadas a la acción (CTA) y palabras clave estratégicas, equilibrada con tonos tinta sólidos para el texto y los layouts base.

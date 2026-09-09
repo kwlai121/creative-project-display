@@ -1,0 +1,18 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "100%",
+      "shortDesc": "cumplimiento de WCAG 2.1 AA y ADA",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    },
+    {
+      "displayValue": "25%",
+      "shortDesc": "de aumento en la base de usuarios con acceso",
+      "icon": "Users",
+      "color": "text-blue-600 dark:text-blue-400",
+      "bgColor": "bg-blue-50 dark:bg-blue-950/20"
+    }
+  ]
+}

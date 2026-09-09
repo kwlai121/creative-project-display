@@ -3,7 +3,9 @@ export const drChenSaludDentalProject = {
   slug: "drchensaluddental",
   title: "Dr. Chen Salud Dental",
   description: "Taking a three-generation family dental practice from zero digital presence to a fully designed, accessible, and search-optimized website — built and shipped end to end.",
+  description_es: "Llevando una práctica dental familiar de tres generaciones desde cero presencia digital hasta un sitio web completamente diseñado, accesible y optimizado para buscadores — construido y entregado de principio a fin.",
   category: "UI/UX Design & Development",
+  category_es: "Diseño UI/UX y Desarrollo",
   imageUrl: "/images/projects/drchensaluddental/hero.webp",
   technologies: [
     "WordPress",

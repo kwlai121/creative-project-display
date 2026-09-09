@@ -2,8 +2,11 @@ export const intercompanyTransactionsProject = {
   id: "5",
   slug: "intercompany-transactions",
   title: "Intercompany Transactions Made Easy",
+  title_es: "Transacciones Intercompañía Simplificadas",
   description: "A blockchain based experimental app to solve intercompany transactions complexities.",
+  description_es: "Una aplicación experimental basada en blockchain para resolver la complejidad de las transacciones intercompañía.",
   category: "UX/UI Design",
+  category_es: "Diseño UX/UI",
   imageUrl: "/images/projects/intercompany-transactions/hero.webp",
   technologies: ["Blockchain", "React", "Material UI", "Sketch", "Figma", "Zeplin"],
   gallery: [

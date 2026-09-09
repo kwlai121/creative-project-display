@@ -1,0 +1,1 @@
+El resultado es una landing page intuitiva y accesible que mantiene una apariencia profesional y unificada en todos los dispositivos para ambas marcas. Cada decisión de layout y CTA se tomó para impulsar la inscripción mediante una comunicación clara y escaneable de los beneficios del programa y los criterios de certificación.

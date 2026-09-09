@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ColorSwatch {
   name: string;
@@ -10,10 +11,11 @@ interface ColorPaletteProps {
 }
 
 const ColorPalette: React.FC<ColorPaletteProps> = ({ colors }) => {
+  const { t } = useLanguage();
   if (!colors || colors.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap gap-5 my-6" role="list" aria-label="Brand color palette">
+    <div className="flex flex-wrap gap-5 my-6" role="list" aria-label={t('colorPalette.ariaLabel')}>
       {colors.map((color) => (
         <div key={color.hex} className="flex flex-col items-center gap-2 w-20" role="listitem">
           <div

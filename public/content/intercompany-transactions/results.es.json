@@ -1,0 +1,18 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "80%",
+      "shortDesc": "de reducción estimada en el tiempo de procesamiento",
+      "icon": "TrendingUp",
+      "color": "text-green-600 dark:text-green-400",
+      "bgColor": "bg-green-50 dark:bg-green-950/20"
+    },
+    {
+      "displayValue": "99.8%",
+      "shortDesc": "de precisión estimada en cumplimiento",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    }
+  ]
+}
