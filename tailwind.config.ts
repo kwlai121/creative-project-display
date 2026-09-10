@@ -24,8 +24,11 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'heading': ['Poppins', 'sans-serif'],
-				'body': ['Source Sans Pro', 'sans-serif'],
+				// "Noto Sans TC" only supplies glyphs the primary font lacks
+				// (Traditional Chinese characters), so it's a silent fallback —
+				// Latin text keeps rendering in Poppins / Source Sans Pro.
+				'heading': ['Poppins', 'Noto Sans TC', 'sans-serif'],
+				'body': ['Source Sans Pro', 'Noto Sans TC', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

@@ -1,0 +1,18 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "2",
+      "shortDesc": "個品牌識別整合於一個頁面中",
+      "icon": "Palette",
+      "color": "text-indigo-600 dark:text-indigo-400",
+      "bgColor": "bg-indigo-50 dark:bg-indigo-950/20"
+    },
+    {
+      "displayValue": "✓",
+      "shortDesc": "完全響應式，桌面到行動裝置皆適用",
+      "icon": "Smartphone",
+      "color": "text-orange-600 dark:text-orange-400",
+      "bgColor": "bg-orange-50 dark:bg-orange-950/20"
+    }
+  ]
+}

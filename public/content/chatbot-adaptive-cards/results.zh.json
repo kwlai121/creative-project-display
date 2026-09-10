@@ -1,0 +1,32 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "✓",
+      "shortDesc": "以結構化資料強化視覺呈現",
+      "icon": "CheckCircle",
+      "color": "text-primary",
+      "bgColor": "bg-primary/10"
+    },
+    {
+      "displayValue": "✓",
+      "shortDesc": "互動元素提升使用者參與度",
+      "icon": "Users",
+      "color": "text-blue-600 dark:text-blue-400",
+      "bgColor": "bg-blue-50 dark:bg-blue-950/20"
+    },
+    {
+      "displayValue": "✓",
+      "shortDesc": "改善資料結構以提升跨平台相容性",
+      "icon": "Smartphone",
+      "color": "text-orange-600 dark:text-orange-400",
+      "bgColor": "bg-orange-50 dark:bg-orange-950/20"
+    },
+    {
+      "displayValue": "✓",
+      "shortDesc": "為新一代聊天機器人介面進行原型驗證",
+      "icon": "Target",
+      "color": "text-purple-600 dark:text-purple-400",
+      "bgColor": "bg-purple-50 dark:bg-purple-950/20"
+    }
+  ]
+}

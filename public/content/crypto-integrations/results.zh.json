@@ -1,0 +1,32 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "$10M+",
+      "shortDesc": "的交易量",
+      "icon": "TrendingUp",
+      "color": "text-green-600 dark:text-green-400",
+      "bgColor": "bg-green-50 dark:bg-green-950/20"
+    },
+    {
+      "displayValue": "99.9%",
+      "shortDesc": "的平台正常運行時間",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    },
+    {
+      "displayValue": "100+",
+      "shortDesc": "家整合企業",
+      "icon": "Users",
+      "color": "text-blue-600 dark:text-blue-400",
+      "bgColor": "bg-blue-50 dark:bg-blue-950/20"
+    },
+    {
+      "displayValue": "0",
+      "shortDesc": "安全漏洞",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "第 2 名",
+      "shortDesc": "黑客松得獎作品",
+      "icon": "Trophy",
+      "color": "text-red-500 dark:text-red-400",
+      "bgColor": "bg-red-50 dark:bg-red-950/20"
+    },
+    {
+      "displayValue": "投票",
+      "shortDesc": "獲得社群認可的區塊生產者地位",
+      "icon": "ThumbsUp",
+      "color": "text-blue-600 dark:text-blue-400",
+      "bgColor": "bg-blue-50 dark:bg-blue-950/20"
+    }
+  ]
+}

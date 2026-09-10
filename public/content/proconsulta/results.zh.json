@@ -1,0 +1,18 @@
+{
+  "outcomes": [
+    {
+      "displayValue": "25+",
+      "shortDesc": "年公司經驗的呈現",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    },
+    {
+      "displayValue": "180+",
+      "shortDesc": "個已完成專案的展示",
+      "icon": "CheckCircle",
+      "color": "text-primary",
+      "bgColor": "bg-primary/10"
+    }
+  ]
+}

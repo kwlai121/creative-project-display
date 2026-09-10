@@ -1,19 +1,22 @@
 import { withBase } from '@/lib/basePath';
 import type { Language } from '@/contexts/LanguageContext';
+import { FIELD_SUFFIX } from '@/lib/localize';
 
 // Content loader utility for loading markdown content and results data.
-// Spanish content lives alongside the English files as `{section}.es.md` /
-// `results.es.json`; when a locale file is missing we fall back to English
-// rather than showing a broken section.
+// Translated content lives alongside the English files as `{section}.es.md` /
+// `{section}.zh.md` (and `results.es.json` / `results.zh.json`); when a
+// locale file is missing we fall back to English rather than showing a
+// broken section.
 export const loadProjectContent = async (
   projectSlug: string,
   section: string,
   language: Language = 'en'
 ): Promise<string> => {
   try {
-    if (language === 'es') {
-      const esResponse = await fetch(withBase(`/content/${projectSlug}/${section}.es.md`));
-      if (esResponse.ok) return await esResponse.text();
+    const suffix = FIELD_SUFFIX[language];
+    if (suffix) {
+      const localizedResponse = await fetch(withBase(`/content/${projectSlug}/${section}.${suffix}.md`));
+      if (localizedResponse.ok) return await localizedResponse.text();
     }
 
     const response = await fetch(withBase(`/content/${projectSlug}/${section}.md`));
@@ -30,10 +33,11 @@ export const loadProjectContent = async (
 export const loadKeyResults = async (projectSlug: string, language: Language = 'en'): Promise<any> => {
   try {
     // Try to load JSON results first (new format), localized when available
-    if (language === 'es') {
-      const esJsonResponse = await fetch(withBase(`/content/${projectSlug}/results.es.json`));
-      if (esJsonResponse.ok) {
-        const data = await esJsonResponse.json();
+    const suffix = FIELD_SUFFIX[language];
+    if (suffix) {
+      const localizedJsonResponse = await fetch(withBase(`/content/${projectSlug}/results.${suffix}.json`));
+      if (localizedJsonResponse.ok) {
+        const data = await localizedJsonResponse.json();
         if (data.outcomes) return { results: data.outcomes };
         return data;
       }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Quote } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { interpolate } from '@/lib/translations';
 
 const quotes = {
   en: [
@@ -40,6 +41,26 @@ const quotes = {
       text: "King es el compañero de equipo ideal. No solo es un desarrollador UX impresionante, también es perspicaz, meticuloso y reta a los demás a dar lo mejor de sí mismos.",
       author: "Edgar Fernandez",
       role: "Fundador",
+      company: "Edenia Labs"
+    }
+  ],
+  'zh-Hant': [
+    {
+      text: "他是天生的領導者，也是出色的協作者，能有效地讓利害關係人與工程團隊在以使用者為中心的共同願景上保持一致。King 的策略思維與對品質的堅持，使他成為任何團隊都極具價值的資產。",
+      author: "Daniel Delgado",
+      role: "資深工程經理",
+      company: "WDS"
+    },
+    {
+      text: "King 是一位出色的設計師，大幅提升了我們產品的美感與使用者體驗。他對無障礙設計的深厚知識，確保我們的設計對所有人都具包容性且易於使用。他也在改善我們的設計系統上發揮關鍵作用，進而提升了團隊的生產力。",
+      author: "Mauricio Varela",
+      role: "產品經理",
+      company: "Caricaco"
+    },
+    {
+      text: "King 是最佳的團隊夥伴。他不僅是一位出色的 UX 開發者，還富有洞察力、注重細節，並激勵他人展現最好的自己。",
+      author: "Edgar Fernandez",
+      role: "創辦人",
       company: "Edenia Labs"
     }
   ],
@@ -84,7 +105,7 @@ const Quotes = () => {
                     <figcaption className="border-t-2 border-foreground/20 pt-4">
                       <p className="font-bold text-foreground">{quote.author}</p>
                       <p className="text-sm text-muted-foreground">
-                        {quote.role} {language === 'es' ? 'en' : 'at'} {quote.company}
+                        {interpolate(t('quotes.roleAt'), { role: quote.role, company: quote.company })}
                       </p>
                     </figcaption>
                   </figure>

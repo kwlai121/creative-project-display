@@ -23,10 +23,13 @@ export interface Project {
   slug: string;
   title: string;
   title_es?: string;
+  title_zh?: string;
   description: string;
   description_es?: string;
+  description_zh?: string;
   category: string;
   category_es?: string;
+  category_zh?: string;
   imageUrl: string;
   technologies: string[];
   gallery?: (string | GalleryItem)[];
@@ -35,6 +38,7 @@ export interface Project {
   published: boolean;
   role?: string;
   role_es?: string;
+  role_zh?: string;
   year?: string;
   client?: string;
   liveUrl?: string;

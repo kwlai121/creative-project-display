@@ -3,10 +3,13 @@ export const intercompanyTransactionsProject = {
   slug: "intercompany-transactions",
   title: "Intercompany Transactions Made Easy",
   title_es: "Transacciones Intercompañía Simplificadas",
+  title_zh: "輕鬆處理公司間交易",
   description: "A blockchain based experimental app to solve intercompany transactions complexities.",
   description_es: "Una aplicación experimental basada en blockchain para resolver la complejidad de las transacciones intercompañía.",
+  description_zh: "一款基於區塊鏈的實驗性應用程式，用於解決公司間交易的複雜性。",
   category: "UX/UI Design",
   category_es: "Diseño UX/UI",
+  category_zh: "UX/UI 設計",
   imageUrl: "/images/projects/intercompany-transactions/hero.webp",
   technologies: ["Blockchain", "React", "Material UI", "Sketch", "Figma", "Zeplin"],
   gallery: [
