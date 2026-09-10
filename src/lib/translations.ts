@@ -11,7 +11,7 @@ export const translations = {
     'language.toggle': 'Switch language',
 
     'hero.word1': 'Designer',
-    'hero.word2': 'Analyst',
+    'hero.word2': 'Developer',
     'hero.word3': 'Doer',
     'hero.tagline': 'Making complex things simple, one project at a time',
     'hero.cta': 'Check out my projects',
@@ -108,7 +108,7 @@ export const translations = {
     'language.toggle': 'Cambiar idioma',
 
     'hero.word1': 'Diseñador',
-    'hero.word2': 'Analista',
+    'hero.word2': 'Desarrollador',
     'hero.word3': 'Hacedor',
     'hero.tagline': 'Simplificando lo complejo, un proyecto a la vez',
     'hero.cta': 'Ver mis proyectos',
@@ -205,7 +205,7 @@ export const translations = {
     'language.toggle': '切換語言',
 
     'hero.word1': '設計師',
-    'hero.word2': '分析師',
+    'hero.word2': '開發者',
     'hero.word3': '實踐者',
     'hero.tagline': '化繁為簡，一次一個專案',
     'hero.cta': '查看我的作品',
