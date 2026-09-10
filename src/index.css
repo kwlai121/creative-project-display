@@ -4,93 +4,94 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
-    
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 10%;
-    
-    --popover: 0 0% 98%;
-    --popover-foreground: 0 0% 10%;
-    
-    --primary: 0 0% 15%;
-    --primary-foreground: 0 0% 98%;
-    
-    --secondary: 0 0% 92%;
-    --secondary-foreground: 0 0% 20%;
-    
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 45%;
-    
-    --accent: 0 0% 75%;
-    --accent-foreground: 0 0% 10%;
-    
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    /* Warm paper cream, not clinical white — Bauhaus posters were printed on stock, not screens */
+    --background: 42 33% 94%;
+    --foreground: 0 0% 8%;
 
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 0 0% 15%;
+    --card: 42 30% 97%;
+    --card-foreground: 0 0% 8%;
 
-    --radius: 0.75rem;
+    --popover: 42 30% 97%;
+    --popover-foreground: 0 0% 8%;
 
-    /* Brand accent: used sparingly for CTAs, highlights, and eyebrow labels */
-    --brand: 258 90% 62%;
-    --brand-foreground: 0 0% 100%;
-    --brand-glow: 258 90% 62%;
+    --primary: 0 0% 8%;
+    --primary-foreground: 42 33% 96%;
 
-    /* Monochrome elegance gradient backgrounds */
-    --gradient-subtle: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 15% / 0.05) 0%, hsl(0 0% 75% / 0.1) 100%);
-    --gradient-radial: radial-gradient(ellipse at center, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
-    --gradient-mesh: none;
-    
-    /* Geometric patterns */
-    --pattern-grid: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='10' cy='10' r='1' fill='%23000000' fill-opacity='0.08'/%3e%3c/svg%3e");
+    --secondary: 42 20% 88%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 42 20% 89%;
+    --muted-foreground: 0 0% 38%;
+
+    --accent: 42 15% 80%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 6 78% 47%;
+    --destructive-foreground: 42 33% 96%;
+
+    --border: 0 0% 8%;
+    --input: 0 0% 8%;
+    --ring: 0 0% 8%;
+
+    /* Sharp geometry: Bauhaus shapes are cut, not softened */
+    --radius: 0rem;
+
+    /* The three Bauhaus primaries, used deliberately as color-blocks, never as a gradient */
+    --bauhaus-red: 6 78% 50%;
+    --bauhaus-red-foreground: 42 33% 96%;
+    --bauhaus-yellow: 45 97% 50%;
+    --bauhaus-yellow-foreground: 0 0% 8%;
+    --bauhaus-blue: 213 62% 30%;
+    --bauhaus-blue-foreground: 42 33% 96%;
+
+    /* Backwards-compatible alias so any leftover `brand` usage still resolves */
+    --brand: var(--bauhaus-blue);
+    --brand-foreground: var(--bauhaus-blue-foreground);
+
+    /* Bold dot grid instead of a soft one — a nod to the Bauhaus preliminary-course grid */
+    --pattern-grid: url("data:image/svg+xml,%3csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='12' cy='12' r='1.2' fill='%23141110' fill-opacity='0.14'/%3e%3c/svg%3e");
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 92%;
-    
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 92%;
-    
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 92%;
-    
-    --primary: 0 0% 85%;
-    --primary-foreground: 0 0% 8%;
-    
+    --background: 0 0% 9%;
+    --foreground: 42 20% 92%;
+
+    --card: 0 0% 13%;
+    --card-foreground: 42 20% 92%;
+
+    --popover: 0 0% 13%;
+    --popover-foreground: 42 20% 92%;
+
+    --primary: 42 20% 92%;
+    --primary-foreground: 0 0% 9%;
+
     --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 88%;
-    
-    --muted: 0 0% 16%;
-    --muted-foreground: 0 0% 65%;
-    
-    --accent: 0 0% 60%;
-    --accent-foreground: 0 0% 8%;
-    
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 92%;
-    
-    --border: 0 0% 22%;
-    --input: 0 0% 22%;
-    --ring: 0 0% 85%;
+    --secondary-foreground: 42 20% 88%;
 
-    /* Brand accent: slightly brighter and lifted for dark surfaces */
-    --brand: 258 95% 72%;
-    --brand-foreground: 0 0% 10%;
-    --brand-glow: 258 95% 72%;
+    --muted: 0 0% 17%;
+    --muted-foreground: 42 10% 65%;
 
-    /* Enhanced monochrome gradients for dark mode */
-    --gradient-subtle: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 85% / 0.1) 0%, hsl(0 0% 60% / 0.15) 100%);
-    --gradient-radial: radial-gradient(ellipse at center, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
-    --gradient-mesh: none;
-    
-    /* Geometric patterns */
-    --pattern-grid: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='10' cy='10' r='1' fill='%23ffffff' fill-opacity='0.08'/%3e%3c/svg%3e");
+    --accent: 0 0% 24%;
+    --accent-foreground: 42 20% 92%;
+
+    --destructive: 6 70% 55%;
+    --destructive-foreground: 0 0% 9%;
+
+    --border: 42 15% 80%;
+    --input: 42 15% 80%;
+    --ring: 42 20% 92%;
+
+    --bauhaus-red: 6 82% 58%;
+    --bauhaus-red-foreground: 0 0% 9%;
+    --bauhaus-yellow: 45 95% 58%;
+    --bauhaus-yellow-foreground: 0 0% 9%;
+    --bauhaus-blue: 213 70% 62%;
+    --bauhaus-blue-foreground: 0 0% 9%;
+
+    --brand: var(--bauhaus-blue);
+    --brand-foreground: var(--bauhaus-blue-foreground);
+
+    --pattern-grid: url("data:image/svg+xml,%3csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='12' cy='12' r='1.2' fill='%23f2ece0' fill-opacity='0.12'/%3e%3c/svg%3e");
   }
 }
 
@@ -122,7 +123,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-normal tracking-tight;
+    @apply font-heading font-bold tracking-tight;
   }
   
   h1 {
@@ -162,40 +163,63 @@
   }
   
   .project-card {
-    @apply relative overflow-hidden rounded-2xl bg-card border border-border/50 transition-all duration-300 ease-in-out;
+    @apply relative overflow-hidden bg-card border-2 border-foreground transition-transform duration-200 ease-out;
+    box-shadow: 5px 5px 0 0 hsl(var(--foreground));
   }
 
   .project-card:hover {
-    @apply border-brand/30 shadow-glow -translate-y-1;
+    @apply -translate-y-[3px] -translate-x-[3px];
+    box-shadow: 8px 8px 0 0 hsl(var(--foreground));
   }
 
   .glass-effect {
-    @apply bg-background/80 backdrop-blur-md border border-border/20;
+    @apply bg-background/90 backdrop-blur-md border-2 border-foreground;
   }
 
-  /* Soft, brand-tinted elevation for interactive cards */
-  .shadow-glow {
-    box-shadow:
-      0 1px 1px hsl(var(--foreground) / 0.03),
-      0 8px 24px -8px hsl(var(--brand-glow) / 0.35),
-      0 2px 8px -2px hsl(var(--foreground) / 0.06);
+  /* Hard, offset "paper lifting off the page" shadow — no blur, no gradient */
+  .shadow-hard {
+    box-shadow: 6px 6px 0 0 hsl(var(--foreground));
   }
 
-  /* Decorative blurred blobs used behind hero content */
-  .brand-blob {
-    @apply pointer-events-none absolute rounded-full blur-[110px];
-    background: radial-gradient(circle at center, hsl(var(--brand) / 0.22), transparent 65%);
+  .shadow-hard-sm {
+    box-shadow: 3px 3px 0 0 hsl(var(--foreground));
   }
 
-  /* Thin accent line, e.g. above the footer */
+  .shadow-hard-red {
+    box-shadow: 6px 6px 0 0 hsl(var(--bauhaus-red));
+  }
+
+  .shadow-hard-yellow {
+    box-shadow: 6px 6px 0 0 hsl(var(--bauhaus-yellow));
+  }
+
+  .shadow-hard-blue {
+    box-shadow: 6px 6px 0 0 hsl(var(--bauhaus-blue));
+  }
+
+  /* Solid geometric shapes used to compose the hero, instead of blurred gradient blobs */
+  .bauhaus-shape {
+    @apply pointer-events-none absolute;
+  }
+
+  .bauhaus-triangle {
+    @apply pointer-events-none absolute w-0 h-0;
+  }
+
+  /* Three-band stripe (red / yellow / blue) used above the footer and as a section divider */
   .accent-hairline {
     @apply relative;
   }
 
   .accent-hairline::before {
     content: '';
-    @apply absolute top-0 left-0 right-0 h-px;
-    background: linear-gradient(90deg, transparent, hsl(var(--brand) / 0.5), transparent);
+    @apply absolute top-0 left-0 right-0 h-[3px];
+    background: linear-gradient(
+      90deg,
+      hsl(var(--bauhaus-red)) 0%, hsl(var(--bauhaus-red)) 33.33%,
+      hsl(var(--bauhaus-yellow)) 33.33%, hsl(var(--bauhaus-yellow)) 66.66%,
+      hsl(var(--bauhaus-blue)) 66.66%, hsl(var(--bauhaus-blue)) 100%
+    );
   }
   
   .section {
@@ -277,11 +301,30 @@
   
   /* Hero title utility for consistent large headings */
   .hero-title {
-    @apply font-heading text-5xl sm:text-6xl lg:text-7xl font-medium leading-[0.95] tracking-tighter;
+    @apply font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tighter;
+  }
+
+  /* Bold uppercase tag used for eyebrows and category badges */
+  .label-tag {
+    @apply inline-flex items-center gap-1.5 border-2 border-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest;
   }
 }
 
 @layer utilities {
+  /* Slow ambient rotation for decorative geometric shapes */
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 22s linear infinite;
+  }
+
+  .animate-spin-slow-reverse {
+    animation: spin-slow 26s linear infinite reverse;
+  }
+
   /* Slow, ambient drift for decorative background blobs */
   @keyframes float-slow {
     0%, 100% { transform: translate(0, 0) scale(1); }

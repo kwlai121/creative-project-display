@@ -57,6 +57,20 @@ export default {
 					DEFAULT: 'hsl(var(--brand))',
 					foreground: 'hsl(var(--brand-foreground))'
 				},
+				bauhaus: {
+					red: {
+						DEFAULT: 'hsl(var(--bauhaus-red))',
+						foreground: 'hsl(var(--bauhaus-red-foreground))'
+					},
+					yellow: {
+						DEFAULT: 'hsl(var(--bauhaus-yellow))',
+						foreground: 'hsl(var(--bauhaus-yellow-foreground))'
+					},
+					blue: {
+						DEFAULT: 'hsl(var(--bauhaus-blue))',
+						foreground: 'hsl(var(--bauhaus-blue-foreground))'
+					},
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'

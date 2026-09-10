@@ -45,6 +45,12 @@ const quotes = {
   ],
 };
 
+const SHAPE_VARIANTS = [
+  { badge: 'bg-bauhaus-red', icon: 'text-bauhaus-red-foreground', shadow: 'hover:shadow-hard-red' },
+  { badge: 'bg-bauhaus-yellow', icon: 'text-bauhaus-yellow-foreground', shadow: 'hover:shadow-hard-yellow' },
+  { badge: 'bg-bauhaus-blue', icon: 'text-bauhaus-blue-foreground', shadow: 'hover:shadow-hard-blue' },
+];
+
 const Quotes = () => {
   const { language, t } = useLanguage();
   const localizedQuotes = quotes[language];
@@ -53,19 +59,21 @@ const Quotes = () => {
     <section id="quotes" className="section">
       <div className="container-width">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-medium mb-12 text-center animate-fade-in">
+          <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
             {t('quotes.heading')}
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {localizedQuotes.map((quote, index) => (
+            {localizedQuotes.map((quote, index) => {
+              const variant = SHAPE_VARIANTS[index % SHAPE_VARIANTS.length];
+              return (
               <div
                 key={index}
                 className={`group animate-fade-in [animation-delay:${200 + index * 150}ms]`}
               >
-                <div className="relative p-6 rounded-2xl bg-card border border-border/50 hover:border-brand/30 transition-all duration-300 hover:shadow-glow hover:-translate-y-1">
-                  <div className="w-9 h-9 flex items-center justify-center rounded-full bg-brand/10 mb-4">
-                    <Quote className="w-4 h-4 text-brand" aria-hidden="true" />
+                <div className={`relative p-6 bg-card border-2 border-foreground transition-all duration-200 ease-out hover:-translate-y-[3px] hover:-translate-x-[3px] ${variant.shadow}`}>
+                  <div className={`w-9 h-9 flex items-center justify-center rounded-full border-2 border-foreground mb-4 ${variant.badge}`}>
+                    <Quote className={`w-4 h-4 ${variant.icon}`} aria-hidden="true" />
                   </div>
 
                   <figure>
@@ -73,8 +81,8 @@ const Quotes = () => {
                       "{quote.text}"
                     </blockquote>
 
-                    <figcaption className="border-t border-border/30 pt-4">
-                      <p className="font-medium text-foreground">{quote.author}</p>
+                    <figcaption className="border-t-2 border-foreground/20 pt-4">
+                      <p className="font-bold text-foreground">{quote.author}</p>
                       <p className="text-sm text-muted-foreground">
                         {quote.role} {language === 'es' ? 'en' : 'at'} {quote.company}
                       </p>
@@ -82,7 +90,8 @@ const Quotes = () => {
                   </figure>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

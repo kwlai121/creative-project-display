@@ -36,7 +36,7 @@ const MediaSection: React.FC<MediaSectionProps> = ({ video, iframe }) => {
       return (
         <video 
           controls 
-          className="w-full h-full object-cover rounded-xl"
+          className="w-full h-full object-cover"
         >
           <source src={video.url} type={`video/${video.type || 'mp4'}`} />
           {t('media.videoFallback')}
@@ -48,7 +48,7 @@ const MediaSection: React.FC<MediaSectionProps> = ({ video, iframe }) => {
       <iframe
         src={embedUrl}
         title={video.title || t('media.videoDefaultTitle')}
-        className="w-full h-full rounded-xl"
+        className="w-full h-full"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
@@ -61,7 +61,7 @@ const MediaSection: React.FC<MediaSectionProps> = ({ video, iframe }) => {
       <iframe
         src={iframe.url}
         title={iframe.title || t('media.iframeDefaultTitle')}
-        className="w-full h-full rounded-xl border-0"
+        className="w-full h-full border-0"
         style={{ 
           height: iframe.height || '500px',
           width: iframe.width || '100%'
@@ -86,7 +86,7 @@ const MediaSection: React.FC<MediaSectionProps> = ({ video, iframe }) => {
               {video.description && (
                 <p className="text-muted-foreground mb-6">{video.description}</p>
               )}
-              <div className="aspect-video relative overflow-hidden rounded-xl bg-muted">
+              <div className="aspect-video relative overflow-hidden border-2 border-foreground shadow-hard bg-muted">
                 {renderVideo(video)}
               </div>
             </div>
@@ -100,7 +100,7 @@ const MediaSection: React.FC<MediaSectionProps> = ({ video, iframe }) => {
               {iframe.description && (
                 <p className="text-muted-foreground mb-6">{iframe.description}</p>
               )}
-              <div className="relative overflow-hidden rounded-xl bg-muted">
+              <div className="relative overflow-hidden border-2 border-foreground shadow-hard bg-muted">
                 {renderIframe(iframe)}
               </div>
             </div>

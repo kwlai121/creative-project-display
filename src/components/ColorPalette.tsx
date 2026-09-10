@@ -19,12 +19,12 @@ const ColorPalette: React.FC<ColorPaletteProps> = ({ colors }) => {
       {colors.map((color) => (
         <div key={color.hex} className="flex flex-col items-center gap-2 w-20" role="listitem">
           <div
-            className="w-14 h-14 rounded-full border border-border shadow-sm ring-1 ring-black/5"
+            className="w-14 h-14 rounded-full border-2 border-foreground"
             style={{ backgroundColor: color.hex }}
             aria-hidden="true"
           />
           <div className="text-center">
-            <p className="text-xs font-medium text-foreground leading-tight">{color.name}</p>
+            <p className="text-xs font-bold text-foreground leading-tight">{color.name}</p>
             <p className="text-[11px] text-muted-foreground font-mono leading-tight">{color.hex}</p>
           </div>
         </div>

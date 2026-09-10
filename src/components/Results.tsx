@@ -195,12 +195,12 @@ const MetricItem = ({ result, index }: { result: ResultData | string, index: num
   const Icon = iconMap[context.icon as keyof typeof iconMap] || CheckCircle;
   
   return (
-    <div 
-      className="inline-flex items-center gap-3 px-4 py-3 rounded-full border bg-muted/30 animate-fade-in"
+    <div
+      className="inline-flex items-center gap-3 px-4 py-3 border-2 border-foreground bg-muted/30 animate-fade-in"
       style={{ animationDelay: `${index * 50}ms` }}
     >
       <Icon size={18} className="text-muted-foreground" aria-hidden="true" />
-      <span className="text-lg font-semibold text-foreground">
+      <span className="text-lg font-bold text-foreground">
         {metric.displayValue}
       </span>
       <span className="text-base text-muted-foreground">
@@ -235,7 +235,7 @@ const Results: React.FC<ResultsProps> = ({ content }) => {
   return (
     <div>
       <div className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">{t('results.heading')}</h2>
+        <h2 className="text-2xl font-bold mb-2">{t('results.heading')}</h2>
         <p className="text-sm text-muted-foreground">
           {t('results.subtext')}
         </p>

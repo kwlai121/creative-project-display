@@ -6,13 +6,27 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-16 md:pt-24 md:pb-24 overflow-hidden">
-      {/* Decorative ambient blobs */}
+      {/* Bauhaus composition — Kandinsky's canonical pairing: blue circle, red square, yellow triangle */}
       <div
-        className="brand-blob animate-float-slow -top-40 -left-40 w-[30rem] h-[30rem] md:w-[38rem] md:h-[38rem]"
+        className="bauhaus-shape rounded-full bg-bauhaus-blue border-4 border-foreground -top-20 -left-20 w-64 h-64 md:w-[26rem] md:h-[26rem] animate-float-slow"
         aria-hidden="true"
       />
       <div
-        className="brand-blob animate-float-slow-reverse top-1/4 -right-48 w-[26rem] h-[26rem] md:w-[32rem] md:h-[32rem] opacity-60"
+        className="bauhaus-shape bg-bauhaus-red border-4 border-foreground rotate-12 top-20 -right-8 w-32 h-32 md:top-16 md:-right-14 md:w-48 md:h-48"
+        aria-hidden="true"
+      />
+      <div
+        className="bauhaus-triangle bottom-6 left-[6%] md:bottom-14 md:left-[14%]"
+        style={{
+          borderLeft: "46px solid transparent",
+          borderRight: "46px solid transparent",
+          borderBottom: "80px solid hsl(var(--bauhaus-yellow))",
+          filter: "drop-shadow(4px 4px 0 hsl(var(--foreground)))",
+        }}
+        aria-hidden="true"
+      />
+      <div
+        className="bauhaus-shape rounded-full border-4 border-foreground bg-background top-1/3 right-[8%] w-14 h-14 hidden md:block"
         aria-hidden="true"
       />
 
@@ -20,8 +34,8 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="space-y-2 animate-slide-down">
             <h1 className="hero-title mt-4 px-4">
-              {t('hero.word1')} <span className="text-[0.55em] font-normal mx-1 align-middle text-brand">/</span> {t('hero.word2')} <br />
-              <span className="text-[0.55em] font-normal mx-1 align-middle text-brand">/</span> {t('hero.word3')}
+              {t('hero.word1')} <span className="text-[0.55em] font-normal mx-1 align-middle text-bauhaus-red">/</span> {t('hero.word2')} <br />
+              <span className="text-[0.55em] font-normal mx-1 align-middle text-bauhaus-blue">/</span> {t('hero.word3')}
             </h1>
           </div>
 
@@ -32,7 +46,7 @@ const Hero = () => {
           <div className="pt-4 animate-fade-in [animation-delay:400ms]">
             <a
               href="#projects"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-brand text-brand-foreground shadow-glow transition-all hover:-translate-y-0.5 hover:brightness-110"
+              className="inline-flex items-center px-7 py-3 bg-primary text-primary-foreground border-2 border-foreground font-bold uppercase tracking-wide shadow-hard-red transition-all hover:-translate-y-[3px] hover:-translate-x-[3px] hover:shadow-hard-blue"
             >
               {t('hero.cta')}
               <svg

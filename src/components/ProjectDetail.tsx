@@ -39,19 +39,11 @@ const ProjectDetail = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [content, setContent] = useState<Record<string, any>>({});
   const [loading, setLoading] = useState(true);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   // Scroll to top when component mounts or slug changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
-
-  // Track scroll position for header visual feedback
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Load project content (re-fetches when the language toggle changes)
   useEffect(() => {
@@ -84,7 +76,7 @@ const ProjectDetail = () => {
     return (
       <div className="min-h-screen bg-pattern-grid flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-medium mb-4">{t('projectDetail.projectNotFound')}</h1>
+          <h1 className="text-2xl font-bold mb-4">{t('projectDetail.projectNotFound')}</h1>
           <Button onClick={handleBackToPortfolio}>
             <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
             {t('projectDetail.backToPortfolio')}
@@ -109,12 +101,12 @@ const ProjectDetail = () => {
       </a>
 
       {/* Fixed header: brand + back to portfolio + prev/next + theme */}
-      <header className={`fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-md transition-shadow duration-300 ${isScrolled ? 'shadow-md border-border/50' : 'shadow-sm'}`}>
+      <header className="fixed top-0 left-0 right-0 z-50 border-b-2 border-foreground bg-background/95 backdrop-blur-md">
         <div className="container-width py-3">
           <div className="flex items-center justify-between gap-2">
-            <Link to="/" className="text-xl font-medium tracking-tight shrink-0">
+            <Link to="/" className="text-xl font-bold tracking-tight shrink-0">
               <span className="sr-only">{t('nav.brandSr')}</span>
-              <span className="text-primary">K<span className="text-brand">.</span>Lai</span>
+              <span className="text-primary">K<span className="text-bauhaus-red">.</span>Lai</span>
             </Link>
             <div className="flex items-center gap-1 md:gap-4 min-w-0">
               <Button variant="ghost" onClick={handleBackToPortfolio} className="gap-2 px-2 md:px-4" size="sm">
@@ -150,7 +142,7 @@ const ProjectDetail = () => {
       <section className="section">
         <div className="container-width">
           <div className="max-w-4xl mx-auto">
-            <div className="aspect-[4/3] relative overflow-hidden rounded-2xl mb-8 animate-scale-in">
+            <div className="aspect-[4/3] relative overflow-hidden border-4 border-foreground shadow-hard mb-8 animate-scale-in">
               <img
                 src={withBase(project.imageUrl)}
                 alt={title}
@@ -160,8 +152,8 @@ const ProjectDetail = () => {
             </div>
 
             <div className="mb-8 animate-fade-in [animation-delay:200ms]">
-              <Badge variant="brand" className="mb-4">{category}</Badge>
-              <h1 className="text-4xl md:text-5xl font-medium mb-6">{title}</h1>
+              <Badge variant="blue" className="mb-4">{category}</Badge>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">{title}</h1>
               <p className="text-xl text-muted-foreground max-w-2xl">{description}</p>
             </div>
 
@@ -180,7 +172,7 @@ const ProjectDetail = () => {
         <section className="section">
           <div className="container-width">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-medium mb-4 animate-fade-in">{t('projectDetail.gallery')}</h2>
+              <h2 className="text-2xl font-bold mb-4 animate-fade-in">{t('projectDetail.gallery')}</h2>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
                 {project.gallery.map((item, index) => {
                   const galleryItem = normalizeGalleryItem(item, index, title, t('gallery.imageAltFallback'));
@@ -188,7 +180,7 @@ const ProjectDetail = () => {
                     <button
                       key={index}
                       onClick={() => openModal(index)}
-                      className={`aspect-[4/3] relative overflow-hidden rounded-xl animate-fade-in [animation-delay:${300 + index * 100}ms] group cursor-pointer focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none`}
+                      className={`aspect-[4/3] relative overflow-hidden border-2 border-foreground animate-fade-in [animation-delay:${300 + index * 100}ms] group cursor-pointer transition-transform duration-200 hover:-translate-y-[2px] hover:-translate-x-[2px] hover:shadow-hard-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none`}
                     >
                       <img
                         src={withBase(galleryItem.url)}
@@ -240,14 +232,14 @@ const ProjectDetail = () => {
               ) : (
                 <>
                   <div className="animate-fade-in [animation-delay:500ms]">
-                    <h2 className="text-2xl font-medium mb-4">{t('projectDetail.challenge')}</h2>
+                    <h2 className="text-2xl font-bold mb-4">{t('projectDetail.challenge')}</h2>
                     <div className="leading-relaxed prose prose-neutral dark:prose-invert max-w-none text-muted-foreground">
                       <ReactMarkdown>{content.challenge || 'Content loading...'}</ReactMarkdown>
                     </div>
                   </div>
 
                   <div className="animate-fade-in [animation-delay:600ms]">
-                    <h2 className="text-2xl font-medium mb-4">{t('projectDetail.solution')}</h2>
+                    <h2 className="text-2xl font-bold mb-4">{t('projectDetail.solution')}</h2>
                     <div className="leading-relaxed prose prose-neutral dark:prose-invert max-w-none text-muted-foreground">
                       <ReactMarkdown>{content.solution || 'Content loading...'}</ReactMarkdown>
                     </div>
@@ -257,14 +249,14 @@ const ProjectDetail = () => {
                   </div>
 
                   <div className="animate-fade-in [animation-delay:700ms]">
-                    <h2 className="text-2xl font-medium mb-4">{t('projectDetail.process')}</h2>
+                    <h2 className="text-2xl font-bold mb-4">{t('projectDetail.process')}</h2>
                     <div className="leading-relaxed prose prose-neutral dark:prose-invert max-w-none text-muted-foreground">
                       <ReactMarkdown>{content.process || 'Content loading...'}</ReactMarkdown>
                     </div>
                   </div>
 
                   <div className="animate-fade-in [animation-delay:800ms]">
-                    <h2 className="text-2xl font-medium mb-4">{t('projectDetail.results')}</h2>
+                    <h2 className="text-2xl font-bold mb-4">{t('projectDetail.results')}</h2>
                     <div className="leading-relaxed prose prose-neutral dark:prose-invert max-w-none text-muted-foreground">
                       <ReactMarkdown>{content.results || 'Content loading...'}</ReactMarkdown>
                     </div>
@@ -277,7 +269,7 @@ const ProjectDetail = () => {
             <div className="md:col-span-1">
               <div className="space-y-8 md:sticky md:top-24">
                 {/* Project Info */}
-                <div className="animate-fade-in [animation-delay:400ms] p-5 rounded-xl border border-border/50 bg-card/50">
+                <div className="animate-fade-in [animation-delay:400ms] p-5 border-2 border-foreground bg-card">
                   <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">{t('projectDetail.projectInfo')}</h3>
                   <dl className="space-y-3">
                     {category && (
@@ -337,7 +329,7 @@ const ProjectDetail = () => {
       <div className="section" aria-hidden="true">
         <div className="container-width">
           <div className="max-w-4xl mx-auto">
-            <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+            <div className="accent-hairline h-[3px]" />
           </div>
         </div>
       </div>
@@ -362,7 +354,7 @@ const ProjectDetail = () => {
       <section className="section">
         <div className="container-width">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-between py-8 border-t">
+            <div className="flex items-center justify-between py-8 border-t-2 border-foreground">
               {prevProject ? (
                 <Button variant="ghost" asChild className="flex-1 justify-start pl-1 h-auto py-3">
                   <Link

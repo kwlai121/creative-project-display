@@ -11,7 +11,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-      className="relative p-2 rounded-lg bg-secondary/20 hover:bg-secondary/40 transition-colors"
+      className="relative p-2 border-2 border-foreground bg-background hover:bg-foreground hover:text-background transition-colors"
       aria-label={t('theme.toggle')}
     >
       <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

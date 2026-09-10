@@ -34,13 +34,13 @@ const Navbar = () => {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-6 py-4",
-          scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+          scrolled ? "bg-background/95 backdrop-blur-md border-b-2 border-foreground" : "bg-transparent"
         )}
       >
         <div className="container-width flex items-center justify-between">
-        <a href="#" className="text-xl font-medium tracking-tight">
+        <a href="#" className="text-xl font-bold tracking-tight">
           <span className="sr-only">{t('nav.brandSr')}</span>
-          <span className="text-primary">K<span className="text-brand">.</span>Lai</span>
+          <span className="text-primary">K<span className="text-bauhaus-red">.</span>Lai</span>
         </a>
 
         <nav className="hidden md:flex items-center space-x-8" aria-label="Main navigation">
@@ -94,7 +94,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div id="mobile-menu" className="md:hidden absolute top-full left-0 right-0 bg-background border-t shadow-lg animate-fade-in duration-300">
+        <div id="mobile-menu" className="md:hidden absolute top-full left-0 right-0 bg-background border-t-2 border-foreground animate-fade-in duration-300">
           <nav
             className="container-width py-4 flex flex-col space-y-4"
             aria-label="Mobile navigation"

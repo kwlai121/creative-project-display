@@ -18,7 +18,7 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-pattern-grid flex items-center justify-center">
       <div className="text-center max-w-md mx-auto px-6">
-        <p className="text-7xl font-heading font-medium text-brand mb-4">404</p>
+        <p className="text-7xl font-heading font-bold text-bauhaus-red mb-4">404</p>
         <h1 className="text-2xl font-medium mb-4">{t('notFound.heading')}</h1>
         <p className="text-muted-foreground mb-8">
           {t('notFound.description')}

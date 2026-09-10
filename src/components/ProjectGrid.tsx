@@ -13,7 +13,7 @@ const ProjectGrid = () => {
   return <section id="projects" className="section">
       <div className="container-width">
         <div className="mb-12 text-center max-w-2xl mx-auto">
-          <span className="inline-block px-3 py-1 text-xs font-medium bg-brand/10 text-brand rounded-full mb-4">
+          <span className="label-tag bg-bauhaus-red text-bauhaus-red-foreground mb-4">
             {t('projects.eyebrow')}
           </span>
           <h2 className="mb-4">{t('projects.heading')}</h2>

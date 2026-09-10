@@ -11,7 +11,7 @@ const About = () => {
       <div className="container-width">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="order-2 md:order-1">
-            <div className="aspect-square max-w-md mx-auto rounded-full overflow-hidden ring-4 ring-brand/15 ring-offset-4 ring-offset-background">
+            <div className="aspect-square max-w-md mx-auto rounded-full overflow-hidden border-4 border-foreground ring-4 ring-bauhaus-yellow ring-offset-4 ring-offset-background">
               <img
                 src={withBase("/images/klai-me.webp")}
                 alt="King, happily sitting next to a lake."
@@ -21,11 +21,11 @@ const About = () => {
           </div>
 
           <div className="order-1 md:order-2">
-            <span className="inline-block px-3 py-1 text-xs font-medium bg-brand/10 text-brand rounded-full mb-4">
+            <span className="label-tag bg-bauhaus-yellow text-bauhaus-yellow-foreground mb-4">
               {t('about.eyebrow')}
             </span>
             <h2 className="mb-6">
-              {t('about.headingPre')}<span className="text-brand">{t('about.headingHighlight')}</span>{t('about.headingPost')}
+              {t('about.headingPre')}<span className="text-bauhaus-red">{t('about.headingHighlight')}</span>{t('about.headingPost')}
             </h2>
 
             <div className="space-y-4 text-muted-foreground">
