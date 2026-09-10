@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import FocusLock from 'react-focus-lock';
@@ -130,6 +130,12 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
         className="w-screen h-screen max-w-none p-0 border-0 bg-black/95 [&>button]:hidden"
         onKeyDown={handleKeyDown}
       >
+        <DialogTitle className="sr-only">
+          {interpolate(t('gallery.dialogTitle'), { title: projectTitle })}
+        </DialogTitle>
+        <DialogDescription className="sr-only">
+          {t('gallery.dialogDescription')}
+        </DialogDescription>
         <FocusLock disabled={!isOpen}>
           <div className="relative w-full h-full flex items-center justify-center">
             {/* Close Button */}

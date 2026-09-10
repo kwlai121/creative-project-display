@@ -88,6 +88,8 @@ export const translations = {
     'gallery.imageAltFallback': '{title} - Gallery Image {index}',
     'gallery.zoomOutHint': 'Scroll or drag to pan, click to zoom out',
     'gallery.zoomInHint': 'Scroll or click to zoom in',
+    'gallery.dialogTitle': '{title} — Image Gallery',
+    'gallery.dialogDescription': 'Use the arrow keys to browse images, or press Escape to close.',
 
     'colorPalette.ariaLabel': 'Brand color palette',
     'media.videoFallback': 'Your browser does not support the video tag.',
@@ -183,6 +185,8 @@ export const translations = {
     'gallery.imageAltFallback': '{title} - Imagen de Galería {index}',
     'gallery.zoomOutHint': 'Desplaza o arrastra para mover, haz clic para alejar',
     'gallery.zoomInHint': 'Desplaza o haz clic para acercar',
+    'gallery.dialogTitle': '{title} — Galería de Imágenes',
+    'gallery.dialogDescription': 'Usa las flechas del teclado para navegar entre imágenes, o presiona Escape para cerrar.',
 
     'colorPalette.ariaLabel': 'Paleta de colores de marca',
     'media.videoFallback': 'Tu navegador no soporta la etiqueta de video.',
@@ -278,6 +282,8 @@ export const translations = {
     'gallery.imageAltFallback': '{title} - 畫廊圖片 {index}',
     'gallery.zoomOutHint': '捲動或拖曳以移動畫面，點擊可縮小',
     'gallery.zoomInHint': '捲動或點擊以放大',
+    'gallery.dialogTitle': '{title} — 圖片畫廊',
+    'gallery.dialogDescription': '使用方向鍵瀏覽圖片，或按 Escape 鍵關閉。',
 
     'colorPalette.ariaLabel': '品牌色彩配置',
     'media.videoFallback': '您的瀏覽器不支援影片標籤。',

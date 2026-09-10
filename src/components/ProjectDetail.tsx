@@ -180,6 +180,7 @@ const ProjectDetail = () => {
                     <button
                       key={index}
                       onClick={() => openModal(index)}
+                      aria-label={interpolate(t('gallery.viewImage'), { current: String(index + 1), total: String(project.gallery.length) })}
                       className={`aspect-[4/3] relative overflow-hidden border-2 border-foreground animate-fade-in [animation-delay:${300 + index * 100}ms] group cursor-pointer transition-transform duration-200 hover:-translate-y-[2px] hover:-translate-x-[2px] hover:shadow-hard-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none`}
                     >
                       <img
