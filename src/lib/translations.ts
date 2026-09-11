@@ -16,8 +16,6 @@ export const translations = {
     'hero.word3': 'Doer',
     'hero.tagline': 'Making complex things simple, one project at a time',
     'hero.cta': 'Check out my projects',
-    'hero.downloadCv': 'Download CV',
-
     'projects.eyebrow': 'Portfolio',
     'projects.heading': 'Selected Projects',
     'projects.subtext': 'Explore my recent design work across various industries and platforms.',
@@ -123,8 +121,6 @@ export const translations = {
     'hero.word3': 'Hacedor',
     'hero.tagline': 'Simplificando lo complejo, un proyecto a la vez',
     'hero.cta': 'Ver mis proyectos',
-    'hero.downloadCv': 'Descargar CV',
-
     'projects.eyebrow': 'Portafolio',
     'projects.heading': 'Proyectos Seleccionados',
     'projects.subtext': 'Explora mi trabajo de diseño reciente en distintas industrias y plataformas.',
@@ -230,8 +226,6 @@ export const translations = {
     'hero.word3': '實踐者',
     'hero.tagline': '化繁為簡，一次一個專案',
     'hero.cta': '查看我的作品',
-    'hero.downloadCv': '下載履歷',
-
     'projects.eyebrow': '作品集',
     'projects.heading': '精選專案',
     'projects.subtext': '探索我近期橫跨各產業與平台的設計作品。',
