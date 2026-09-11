@@ -10,6 +10,7 @@ export const translations = {
     'theme.toggle': 'Toggle theme',
     'language.toggle': 'Switch language',
 
+    'hero.eyebrow': 'UX/UI Designer',
     'hero.word1': 'Designer',
     'hero.word2': 'Developer',
     'hero.word3': 'Doer',
@@ -107,6 +108,7 @@ export const translations = {
     'theme.toggle': 'Cambiar tema',
     'language.toggle': 'Cambiar idioma',
 
+    'hero.eyebrow': 'Diseñador UX/UI',
     'hero.word1': 'Diseñador',
     'hero.word2': 'Desarrollador',
     'hero.word3': 'Hacedor',
@@ -204,6 +206,7 @@ export const translations = {
     'theme.toggle': '切換主題',
     'language.toggle': '切換語言',
 
+    'hero.eyebrow': 'UX/UI 設計師',
     'hero.word1': '設計師',
     'hero.word2': '開發者',
     'hero.word3': '實踐者',

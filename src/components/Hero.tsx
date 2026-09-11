@@ -33,6 +33,9 @@ const Hero = () => {
       <div className="container-width relative">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="space-y-2 animate-slide-down">
+            <span className="label-tag bg-bauhaus-yellow text-bauhaus-yellow-foreground">
+              {t('hero.eyebrow')}
+            </span>
             <h1 className="hero-title mt-4 px-4">
               {t('hero.word1')} <span className="text-[0.55em] font-normal mx-1 align-middle text-bauhaus-red">/</span> {t('hero.word2')} <br />
               <span className="text-[0.55em] font-normal mx-1 align-middle text-bauhaus-blue">/</span> {t('hero.word3')}
