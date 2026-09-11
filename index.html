@@ -45,6 +45,18 @@
 
   <body>
     <div id="root"></div>
+    <!--
+      Static shadow of the React-rendered contact form, purely so Netlify's
+      build-time form detector (which parses the deployed HTML, not the
+      client-rendered app) picks up its fields. Never shown to visitors —
+      the real form lives in src/components/Contact.tsx and submits here.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
