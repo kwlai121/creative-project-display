@@ -1,8 +1,14 @@
 import React from "react";
+import { Download } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { withBase } from "@/lib/basePath";
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+
+  // No Chinese CV yet — falls back to the English one, same pattern used
+  // for case-study content elsewhere in the app.
+  const cvFileName = language === 'es' ? 'King-Wai-Lai-Yu-CV-ES.pdf' : 'King-Wai-Lai-Yu-CV-EN.pdf';
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-16 md:pt-24 md:pb-24 overflow-hidden">
@@ -46,7 +52,7 @@ const Hero = () => {
             {t('hero.tagline')}
           </p>
 
-          <div className="pt-4 animate-fade-in [animation-delay:400ms]">
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-4 animate-fade-in [animation-delay:400ms]">
             <a
               href="#projects"
               className="inline-flex items-center px-7 py-3 bg-primary text-primary-foreground border-2 border-foreground font-bold uppercase tracking-wide shadow-hard-red transition-all hover:-translate-y-[3px] hover:-translate-x-[3px] hover:shadow-hard-blue"
@@ -67,6 +73,15 @@ const Hero = () => {
               >
                 <path d="m9 18 6-6-6-6" />
               </svg>
+            </a>
+
+            <a
+              href={withBase(`/${cvFileName}`)}
+              download={cvFileName}
+              className="inline-flex items-center px-7 py-3 bg-background text-foreground border-2 border-foreground font-bold uppercase tracking-wide shadow-hard-blue transition-all hover:-translate-y-[3px] hover:-translate-x-[3px] hover:shadow-hard-red"
+            >
+              <Download className="w-5 h-5 mr-2" aria-hidden="true" />
+              {t('hero.downloadCv')}
             </a>
           </div>
         </div>
