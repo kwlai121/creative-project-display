@@ -9,12 +9,12 @@ import { proconsultaProject } from './proconsulta';
 import { Project } from '../../types/project';
 
 export const projects: Project[] = [
+  drChenSaludDentalProject,
+  caricacoProject,
   chatbotAdaptiveCardsProject,
   intercompanyTransactionsProject,
   digitalGoodsForGoodProject,
   cryptoIntegrationsProject,
   polcoAccessibilityAuditProject,
-  drChenSaludDentalProject,
-  caricacoProject,
   proconsultaProject
 ];
