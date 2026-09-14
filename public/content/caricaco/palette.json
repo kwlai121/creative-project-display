@@ -1,0 +1,8 @@
+{
+  "colors": [
+    { "name": "Navy", "hex": "#054579" },
+    { "name": "Orange", "hex": "#F2994A" },
+    { "name": "Purple", "hex": "#3B1F58" },
+    { "name": "Lilac", "hex": "#BB9AFF" }
+  ]
+}

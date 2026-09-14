@@ -1,18 +1,32 @@
 {
   "outcomes": [
     {
-      "displayValue": "2",
-      "shortDesc": "個品牌識別整合於一個頁面中",
+      "displayValue": "✓",
+      "shortDesc": "聯絡表單恢復正常運作，取代原本靜默丟棄每則訊息的處理程式",
+      "icon": "CheckCircle",
+      "color": "text-primary",
+      "bgColor": "bg-primary/10"
+    },
+    {
+      "displayValue": "95+",
+      "shortDesc": "Lighthouse SEO 目標分數，起點是一個未被索引的範本",
+      "icon": "TrendingUp",
+      "color": "text-green-600 dark:text-green-400",
+      "bgColor": "bg-green-50 dark:bg-green-950/20"
+    },
+    {
+      "displayValue": "AA",
+      "shortDesc": "WCAG 2.1 無障礙目標，從第一天就內建於設計中",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    },
+    {
+      "displayValue": "4→1",
+      "shortDesc": "將不一致的 CTA 呈現方式統一為單一按鈕樣式",
       "icon": "Palette",
       "color": "text-indigo-600 dark:text-indigo-400",
       "bgColor": "bg-indigo-50 dark:bg-indigo-950/20"
-    },
-    {
-      "displayValue": "✓",
-      "shortDesc": "完全響應式，桌面到行動裝置皆適用",
-      "icon": "Smartphone",
-      "color": "text-orange-600 dark:text-orange-400",
-      "bgColor": "bg-orange-50 dark:bg-orange-950/20"
     }
   ]
 }

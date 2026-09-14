@@ -1,18 +1,32 @@
 {
   "outcomes": [
     {
-      "displayValue": "2",
-      "shortDesc": "identidades de marca unificadas en una sola página cohesiva",
+      "displayValue": "✓",
+      "shortDesc": "formulario de contacto funcional, reemplazando un manejador que descartaba cada mensaje en silencio",
+      "icon": "CheckCircle",
+      "color": "text-primary",
+      "bgColor": "bg-primary/10"
+    },
+    {
+      "displayValue": "95+",
+      "shortDesc": "meta de SEO en Lighthouse, partiendo de una plantilla sin indexar",
+      "icon": "TrendingUp",
+      "color": "text-green-600 dark:text-green-400",
+      "bgColor": "bg-green-50 dark:bg-green-950/20"
+    },
+    {
+      "displayValue": "AA",
+      "shortDesc": "meta de accesibilidad WCAG 2.1, incorporada desde el primer día",
+      "icon": "Shield",
+      "color": "text-emerald-600 dark:text-emerald-400",
+      "bgColor": "bg-emerald-50 dark:bg-emerald-950/20"
+    },
+    {
+      "displayValue": "4→1",
+      "shortDesc": "versiones inconsistentes del CTA unificadas en un solo estilo de botón",
       "icon": "Palette",
       "color": "text-indigo-600 dark:text-indigo-400",
       "bgColor": "bg-indigo-50 dark:bg-indigo-950/20"
-    },
-    {
-      "displayValue": "✓",
-      "shortDesc": "totalmente responsiva, de escritorio a móvil",
-      "icon": "Smartphone",
-      "color": "text-orange-600 dark:text-orange-400",
-      "bgColor": "bg-orange-50 dark:bg-orange-950/20"
     }
   ]
 }
